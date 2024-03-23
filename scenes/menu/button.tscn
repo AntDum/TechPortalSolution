@@ -1,15 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://lvx8m071lxvj"]
+[gd_scene load_steps=3 format=3 uid="uid://lvx8m071lxvj"]
 
 [ext_resource type="Script" path="res://scenes/menu/Button.gd" id="1_8gv14"]
+[ext_resource type="FontFile" uid="uid://dwpokkrx4xtjx" path="res://assets/font/univers67condensedbold.otf" id="1_f8l24"]
 
 [node name="Button" type="Button"]
-offset_left = 408.0
-offset_top = 413.0
-offset_right = 805.0
-offset_bottom = 524.0
+offset_right = 397.0
+offset_bottom = 111.0
+theme_override_colors/font_color = Color(0.690196, 0.690196, 0.690196, 0.54902)
+theme_override_fonts/font = ExtResource("1_f8l24")
 theme_override_font_sizes/font_size = 60
 text = "Bouton
 "
 script = ExtResource("1_8gv14")
 
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="pressed" from="." to="." method="_on_pressed"]
