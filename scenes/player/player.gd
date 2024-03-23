@@ -44,11 +44,14 @@ var jump_buffer_timer : float = 0
 var is_jumping := false
 # ----------------------------------- #
 
+@onready var left_ray = $RayCast2DLeft
+@onready var right_ray = $RayCast2DRight
 
 # All iputs we want to keep track of
 func get_input() -> Dictionary:
 	return {
 		"x": int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left")),
+		# "y": int(Input.is_action_pressed("down")) - int(Input.is_action_pressed("jump")),
 		"just_jump": Input.is_action_just_pressed("jump") == true,
 		"jump": Input.is_action_pressed("jump") == true,
 		"released_jump": Input.is_action_just_released("jump") == true
@@ -60,9 +63,20 @@ func _physics_process(delta: float) -> void:
 	jump_logic(delta)
 	apply_gravity(delta)
 	
-	timers(delta)
+	platform_collide()
+	
+	timers(delta) 
 	move_and_slide()
-
+	
+func platform_collide() -> void:
+	if left_ray.is_colliding():
+		var collision = left_ray.get_collider().get_parent()
+		if collision.has_method("drop") and Input.is_action_pressed("down"):
+			collision.drop()
+	if right_ray.is_colliding():
+		var collision = right_ray.get_collider().get_parent()
+		if collision.has_method("drop") and Input.is_action_pressed("down"):
+			collision.drop()
 
 func x_movement(delta: float) -> void:
 	x_dir = get_input()["x"]
@@ -96,7 +110,7 @@ func set_direction(hor_direction) -> void:
 		return
 	apply_scale(Vector2(hor_direction * face_direction, 1)) # flip
 	face_direction = hor_direction # remember direction
-
+ 
 
 func jump_logic(_delta: float) -> void:
 	# Reset our jump requirements

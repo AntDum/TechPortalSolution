@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cetvupjkuh13n"]
+[gd_scene load_steps=7 format=3 uid="uid://cetvupjkuh13n"]
 
 [ext_resource type="PackedScene" uid="uid://lrbobe03y04y" path="res://scenes/misc/camera/ScreenCamera.tscn" id="1_6dtcx"]
 [ext_resource type="PackedScene" uid="uid://c8cmypufl6l32" path="res://scenes/player/player.tscn" id="2_yrx3s"]
 [ext_resource type="PackedScene" uid="uid://s8p7m7imqgcd" path="res://scenes/misc/platforms/static_platform.tscn" id="3_3hvh0"]
 [ext_resource type="PackedScene" uid="uid://cmk07bomu6f2a" path="res://scenes/misc/platforms/falling_platform.tscn" id="4_j215o"]
+[ext_resource type="PackedScene" uid="uid://c3hmysrpt8udg" path="res://scenes/ui/ui.tscn" id="5_x0bbi"]
+[ext_resource type="PackedScene" uid="uid://dxkb8cww1ud0m" path="res://scenes/misc/platforms/oneway_platform.tscn" id="6_uxgpf"]
 
 [node name="Demo_level" type="Node2D"]
 
@@ -42,3 +44,16 @@ position = Vector2(-1061, 1225)
 
 [node name="StaticPlatform7" parent="Platforms" instance=ExtResource("3_3hvh0")]
 position = Vector2(-76, 1601)
+
+[node name="UI" parent="." instance=ExtResource("5_x0bbi")]
+
+[node name="oneway_platform" parent="." instance=ExtResource("6_uxgpf")]
+position = Vector2(-784, 172)
+
+[node name="oneway_platform2" parent="." instance=ExtResource("6_uxgpf")]
+position = Vector2(-825, -45)
+
+[node name="oneway_platform3" parent="." instance=ExtResource("6_uxgpf")]
+position = Vector2(-872, -276)
+
+[editable path="Platforms/FallingPlatform2"]

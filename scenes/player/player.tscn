@@ -1,17 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://c8cmypufl6l32"]
+[gd_scene load_steps=9 format=3 uid="uid://c8cmypufl6l32"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_cdao0"]
 [ext_resource type="Texture2D" uid="uid://dhtbqu1trn3d0" path="res://icon.svg" id="2_57b52"]
 [ext_resource type="Script" path="res://scenes/player/Sprite_player.gd" id="3_32r44"]
 
-[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_pooqj"]
-
-[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_j276c"]
-
-[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_ha0a1"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f05xk"]
-size = Vector2(64, 64)
+size = Vector2(128, 128)
 
 [sub_resource type="Animation" id="Animation_kl4uq"]
 resource_name = "jump"
@@ -94,29 +88,28 @@ _data = {
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_mask = 14
 floor_snap_length = 16.0
+platform_floor_layers = 4294967294
 script = ExtResource("1_cdao0")
-
-[node name="RayCastLeft" type="CollisionShape2D" parent="."]
-position = Vector2(-32, 12)
-shape = SubResource("SeparationRayShape2D_pooqj")
-
-[node name="RayCastMid" type="CollisionShape2D" parent="."]
-position = Vector2(0, 11)
-shape = SubResource("SeparationRayShape2D_j276c")
-
-[node name="RayCastRight" type="CollisionShape2D" parent="."]
-position = Vector2(32, 12)
-shape = SubResource("SeparationRayShape2D_ha0a1")
-
-[node name="CollisionShapeBody" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_f05xk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_57b52")
 script = ExtResource("3_32r44")
 player_path = NodePath("..")
 
+[node name="CollisionShapeBody" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_f05xk")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_l8oc5")
 }
+
+[node name="RayCast2DLeft" type="RayCast2D" parent="."]
+position = Vector2(-65, 65)
+collision_mask = 2
+hit_from_inside = true
+
+[node name="RayCast2DRight" type="RayCast2D" parent="."]
+position = Vector2(64, 64)
+collision_mask = 2
+hit_from_inside = true

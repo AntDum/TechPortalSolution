@@ -1,14 +1,43 @@
-[gd_scene load_steps=11 format=3 uid="uid://cmk07bomu6f2a"]
+[gd_scene load_steps=14 format=3 uid="uid://cmk07bomu6f2a"]
 
 [ext_resource type="Texture2D" uid="uid://dhtbqu1trn3d0" path="res://icon.svg" id="1_gdes1"]
 [ext_resource type="Script" path="res://scenes/misc/platforms/falling_platform.gd" id="1_j0c62"]
-[ext_resource type="Shader" path="res://scenes/misc/platforms/falling_platform.gdshader" id="2_rx2ih"]
+[ext_resource type="Script" path="res://scenes/misc/platforms/Sprite2D_falling_platform.gd" id="4_lcxx7"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_k3xq1"]
-shader = ExtResource("2_rx2ih")
-shader_parameter/time_scale = 0.1
-shader_parameter/dissolve_speed = 0.5
-shader_parameter/dissolve_threshold = 0.5
+[sub_resource type="Shader" id="Shader_j1f4i"]
+code = "shader_type canvas_item;
+
+uniform float dissolve_speed : hint_range(0.0, 1.0) = 0.5;
+uniform float dissolve_threshold : hint_range(0.0, 1.0) = 0.5;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+uniform sampler2D noise_texture;
+uniform float dissolve_step : hint_range(0.0, 1.0) = 0.1;
+
+void fragment() {
+	float dissolve_time = dissolve_speed;
+	// Use a noise function to create a dissolve effect
+	float noise_value = textureLod(noise_texture, SCREEN_UV, 0.0).r;
+	float dissolve_factor = smoothstep(dissolve_threshold, dissolve_threshold + dissolve_speed, noise_value);
+	// Apply the dissolve factor to the alpha channel
+	COLOR.a = dissolve_factor * dissolve_step;
+}
+"
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_muyyw"]
+noise_type = 2
+seed = 1
+frequency = 0.0481
+fractal_octaves = 7
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1m5ta"]
+noise = SubResource("FastNoiseLite_muyyw")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_clbhx"]
+shader = SubResource("Shader_j1f4i")
+shader_parameter/dissolve_speed = 0.0
+shader_parameter/dissolve_threshold = 0.0
+shader_parameter/dissolve_step = 1.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_1m5ta")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j8x1w"]
 size = Vector2(384, 26)
@@ -19,6 +48,7 @@ size = Vector2(384, 20)
 [sub_resource type="Animation" id="Animation_tw0jp"]
 resource_name = "shake"
 length = 0.9
+step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -63,7 +93,7 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0.8, 0.9),
-"transitions": PackedFloat32Array(1, 1),
+"transitions": PackedFloat32Array(1, 1.23114),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
@@ -147,9 +177,10 @@ _data = {
 script = ExtResource("1_j0c62")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_k3xq1")
+material = SubResource("ShaderMaterial_clbhx")
 scale = Vector2(3, 0.2)
 texture = ExtResource("1_gdes1")
+script = ExtResource("4_lcxx7")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2
