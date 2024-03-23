@@ -30,4 +30,15 @@ offset_right = 1778.0
 offset_bottom = 610.0
 text = "Music and Sound"
 
+[node name="Quit" parent="." instance=ExtResource("1_ffjsw")]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 943.0
+offset_right = 265.0
+offset_bottom = 1043.0
+text = "Quit"
+
 [connection signal="pressed" from="Music_sound" to="." method="_on_music_sound_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+
+[editable path="Quit"]

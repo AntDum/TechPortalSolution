@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://lvx8m071lxvj"]
+[gd_scene load_steps=2 format=3 uid="uid://lvx8m071lxvj"]
 
 [ext_resource type="Script" path="res://scenes/UI/Button.gd" id="1_8gv14"]
-[ext_resource type="AudioStream" uid="uid://dwpygvy80sfvq" path="res://assets/Sound/Sound_effect/HUD_bouton_presse1.wav" id="2_82oip"]
 
 [node name="Button" type="Button"]
 offset_left = 408.0
@@ -12,9 +11,5 @@ theme_override_font_sizes/font_size = 60
 text = "Bouton
 "
 script = ExtResource("1_8gv14")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_82oip")
-bus = &"SFX"
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

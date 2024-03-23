@@ -5,3 +5,4 @@ extends Button
 
 func _on_pressed():
 	AudioPlayer.play_fx(button_fx)
+
