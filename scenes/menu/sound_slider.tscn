@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bfbnqy7a5fk0m"]
 
-[ext_resource type="Script" path="res://scenes/UI/sound_slider.gd" id="1_gc4du"]
+[ext_resource type="Script" path="res://scenes/menu/sound_slider.gd" id="1_gc4du"]
 
 [node name="Master_slider" type="HSlider"]
 offset_left = 637.0

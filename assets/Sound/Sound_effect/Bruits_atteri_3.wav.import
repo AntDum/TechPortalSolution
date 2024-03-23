@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://uvojpjcfvkp4"
-path="res://.godot/imported/Bruits_atteri_3.wav-0ad08f858705833933c7b3ba901c7ecd.sample"
+path="res://.godot/imported/Bruits_atteri_3.wav-4189bcc3f5217e998da347fb301453cc.sample"
 
 [deps]
 
-source_file="res://assets/Sound/Sound_effect/Bruits_atteri_3.wav"
-dest_files=["res://.godot/imported/Bruits_atteri_3.wav-0ad08f858705833933c7b3ba901c7ecd.sample"]
+source_file="res://assets/sound/Sound_effect/Bruits_atteri_3.wav"
+dest_files=["res://.godot/imported/Bruits_atteri_3.wav-4189bcc3f5217e998da347fb301453cc.sample"]
 
 [params]
 

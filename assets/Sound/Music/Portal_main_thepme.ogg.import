@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://c0b5plxjdnalg"
-path="res://.godot/imported/Portal_main_thepme.ogg-529e1fa27b99ede24c12c6051df366e8.oggvorbisstr"
+path="res://.godot/imported/Portal_main_thepme.ogg-2ab9150eba134f33028863cf226d1239.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Sound/Music/Portal_main_thepme.ogg"
-dest_files=["res://.godot/imported/Portal_main_thepme.ogg-529e1fa27b99ede24c12c6051df366e8.oggvorbisstr"]
+source_file="res://assets/sound/Music/Portal_main_thepme.ogg"
+dest_files=["res://.godot/imported/Portal_main_thepme.ogg-2ab9150eba134f33028863cf226d1239.oggvorbisstr"]
 
 [params]
 

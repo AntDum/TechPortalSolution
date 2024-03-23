@@ -1,7 +1,7 @@
 extends Control
 
 
-const SOUND_MENU_SCENE = "res://scenes/UI/Menu_son.tscn"
+const SOUND_MENU_SCENE = "res://scenes/menu/Menu_son.tscn"
 
 func _ready():
 	AudioPlayer.play_music_menu()

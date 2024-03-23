@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://lvx8m071lxvj"]
 
-[ext_resource type="Script" path="res://scenes/UI/Button.gd" id="1_8gv14"]
+[ext_resource type="Script" path="res://scenes/menu/Button.gd" id="1_8gv14"]
 
 [node name="Button" type="Button"]
 offset_left = 408.0

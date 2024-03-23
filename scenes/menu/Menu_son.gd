@@ -1,6 +1,6 @@
 extends Control
 
-const MAIN_MENU_SCENE = "res://scenes/UI/Main_menu.tscn"
+const MAIN_MENU_SCENE = "res://scenes/menu/Main_menu.tscn"
 
 func _ready():
 	pass

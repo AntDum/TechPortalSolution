@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d1gor55fohguj"
-path="res://.godot/imported/Bruits_vent.wav-13cc06bc77f8f58e08a15c80e1f9977f.sample"
+path="res://.godot/imported/Bruits_vent.wav-bace35425ef40395310db87312eed9b7.sample"
 
 [deps]
 
-source_file="res://assets/Sound/Sound_effect/Bruits_vent.wav"
-dest_files=["res://.godot/imported/Bruits_vent.wav-13cc06bc77f8f58e08a15c80e1f9977f.sample"]
+source_file="res://assets/sound/Sound_effect/Bruits_vent.wav"
+dest_files=["res://.godot/imported/Bruits_vent.wav-bace35425ef40395310db87312eed9b7.sample"]
 
 [params]
 

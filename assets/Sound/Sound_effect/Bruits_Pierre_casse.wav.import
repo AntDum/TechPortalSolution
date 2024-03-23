@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://o48tu1701sou"
-path="res://.godot/imported/Bruits_Pierre_casse.wav-78d970ae366d24a865bab7248bf56fc2.sample"
+path="res://.godot/imported/Bruits_Pierre_casse.wav-cc422bdb6991124c141e2ad368115473.sample"
 
 [deps]
 
-source_file="res://assets/Sound/Sound_effect/Bruits_Pierre_casse.wav"
-dest_files=["res://.godot/imported/Bruits_Pierre_casse.wav-78d970ae366d24a865bab7248bf56fc2.sample"]
+source_file="res://assets/sound/Sound_effect/Bruits_Pierre_casse.wav"
+dest_files=["res://.godot/imported/Bruits_Pierre_casse.wav-cc422bdb6991124c141e2ad368115473.sample"]
 
 [params]
 

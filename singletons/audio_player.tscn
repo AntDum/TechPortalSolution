@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://blbdsrepg6poy"]
+
+[ext_resource type="AudioStream" uid="uid://c0b5plxjdnalg" path="res://assets/sound/Music/Portal_main_thepme.ogg" id="1_kpcyx"]
+[ext_resource type="Script" path="res://singletons/audio_player.gd" id="2_tpx88"]
+
+[node name="AudioPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_kpcyx")
+autoplay = true
+bus = &"Music"
+script = ExtResource("2_tpx88")
