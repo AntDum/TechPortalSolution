@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://lvx8m071lxvj"]
+
+[ext_resource type="Script" path="res://scenes/UI/Button.gd" id="1_8gv14"]
+
+[node name="Button" type="Button"]
+offset_left = 408.0
+offset_top = 413.0
+offset_right = 805.0
+offset_bottom = 524.0
+theme_override_font_sizes/font_size = 60
+text = "Bouton
+"
+script = ExtResource("1_8gv14")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

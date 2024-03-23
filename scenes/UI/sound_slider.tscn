@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfbnqy7a5fk0m"]
+
+[ext_resource type="Script" path="res://scenes/UI/sound_slider.gd" id="1_gc4du"]
+
+[node name="Master_slider" type="HSlider"]
+offset_left = 637.0
+offset_top = 529.0
+offset_right = 1202.0
+offset_bottom = 635.0
+min_value = -30.0
+max_value = 0.0
+script = ExtResource("1_gc4du")
+
+[connection signal="value_changed" from="." to="." method="_on_value_changed"]
