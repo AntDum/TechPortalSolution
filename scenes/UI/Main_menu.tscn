@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3oy4g6jpvaal"]
+
+[ext_resource type="Script" path="res://scenes/UI/Main_menu.gd" id="1_6nsja"]
+[ext_resource type="PackedScene" uid="uid://lvx8m071lxvj" path="res://scenes/UI/button.tscn" id="1_ffjsw"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6nsja")
+
+[node name="Start" parent="." instance=ExtResource("1_ffjsw")]
+layout_mode = 0
+offset_left = 886.0
+offset_top = 111.0
+offset_right = 1742.0
+offset_bottom = 405.0
+theme_override_font_sizes/font_size = 80
+text = "Start the game
+"
+
+[node name="Music_sound" parent="." instance=ExtResource("1_ffjsw")]
+layout_mode = 0
+offset_left = 1217.0
+offset_top = 467.0
+offset_right = 1778.0
+offset_bottom = 610.0
+text = "Music and Sound"
+
+[node name="Quit" parent="." instance=ExtResource("1_ffjsw")]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 943.0
+offset_right = 265.0
+offset_bottom = 1043.0
+text = "Quit"
+
+[connection signal="pressed" from="Music_sound" to="." method="_on_music_sound_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+
+[editable path="Quit"]
