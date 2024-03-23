@@ -19,7 +19,6 @@ func _ready():
 	ShakeTimer.wait_time = shake_delay
 	ResetTimer.wait_time = reset_delay
 
-
 func drop() -> void:
 	area.set_deferred("monitoring", true)
 

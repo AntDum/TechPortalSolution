@@ -1,3 +1,5 @@
-[gd_scene format=3 uid="uid://cjxssm6snqvk6"]
+[gd_scene load_steps=2 format=3 uid="uid://cjxssm6snqvk6"]
 
-[node name="Portal" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://shswww7ahx4w" path="res://scenes/misc/collectibles/collectible.tscn" id="1_iyr22"]
+
+[node name="collectible" instance=ExtResource("1_iyr22")]

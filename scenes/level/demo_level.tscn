@@ -1,66 +1,69 @@
-[gd_scene load_steps=8 format=3 uid="uid://cetvupjkuh13n"]
+[gd_scene load_steps=6 format=3 uid="uid://cetvupjkuh13n"]
 
 [ext_resource type="PackedScene" uid="uid://lrbobe03y04y" path="res://scenes/misc/camera/ScreenCamera.tscn" id="1_6dtcx"]
+[ext_resource type="Script" path="res://scenes/level/demo_level.gd" id="1_wf577"]
 [ext_resource type="PackedScene" uid="uid://c8cmypufl6l32" path="res://scenes/player/player.tscn" id="2_yrx3s"]
-[ext_resource type="PackedScene" uid="uid://s8p7m7imqgcd" path="res://scenes/misc/platforms/static_platform.tscn" id="3_3hvh0"]
-[ext_resource type="PackedScene" uid="uid://cmk07bomu6f2a" path="res://scenes/misc/platforms/falling_platform.tscn" id="4_j215o"]
 [ext_resource type="PackedScene" uid="uid://c3hmysrpt8udg" path="res://scenes/ui/ui.tscn" id="5_x0bbi"]
-[ext_resource type="PackedScene" uid="uid://dxkb8cww1ud0m" path="res://scenes/misc/platforms/oneway_platform.tscn" id="6_uxgpf"]
-[ext_resource type="PackedScene" uid="uid://bkpxc1vn41cvk" path="res://scenes/misc/platforms/falling_oneway_platform.tscn" id="7_j7wrd"]
+[ext_resource type="PackedScene" uid="uid://doegwdd83n18g" path="res://scenes/misc/platforms/all_purpose_platform.tscn" id="8_lta6m"]
 
 [node name="Demo_level" type="Node2D"]
+script = ExtResource("1_wf577")
 
 [node name="ScreenCamera" parent="." instance=ExtResource("1_6dtcx")]
 target = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("2_yrx3s")]
-position = Vector2(-1316, 218)
-gravity_acceleration = 2500.0
+position = Vector2(-1670, 303)
+scale = Vector2(0.5, 0.5)
 
 [node name="Platforms" type="Node2D" parent="."]
 
-[node name="FallingPlatform" parent="Platforms" instance=ExtResource("4_j215o")]
-position = Vector2(-1422, 296)
-
-[node name="FallingPlatform2" parent="Platforms" instance=ExtResource("4_j215o")]
-position = Vector2(-1765, 448)
-
-[node name="StaticPlatform" parent="Platforms" instance=ExtResource("3_3hvh0")]
-position = Vector2(-232, 782)
-
-[node name="StaticPlatform2" parent="Platforms" instance=ExtResource("3_3hvh0")]
-position = Vector2(-113, 345)
-
-[node name="StaticPlatform3" parent="Platforms" instance=ExtResource("3_3hvh0")]
-position = Vector2(-1404, 582)
-
-[node name="StaticPlatform4" parent="Platforms" instance=ExtResource("3_3hvh0")]
-position = Vector2(504, 1004)
-
-[node name="StaticPlatform5" parent="Platforms" instance=ExtResource("3_3hvh0")]
-position = Vector2(1010, 512)
-
-[node name="StaticPlatform6" parent="Platforms" instance=ExtResource("3_3hvh0")]
-position = Vector2(-1061, 1225)
-
-[node name="StaticPlatform7" parent="Platforms" instance=ExtResource("3_3hvh0")]
-position = Vector2(-76, 1601)
-
 [node name="UI" parent="." instance=ExtResource("5_x0bbi")]
 
-[node name="oneway_platform" parent="." instance=ExtResource("6_uxgpf")]
-position = Vector2(-784, 172)
+[node name="platform" parent="." instance=ExtResource("8_lta6m")]
+position = Vector2(-844, 531)
+destroyable = false
+iced = true
 
-[node name="oneway_platform2" parent="." instance=ExtResource("6_uxgpf")]
-position = Vector2(-825, -45)
+[node name="platform2" parent="." instance=ExtResource("8_lta6m")]
+position = Vector2(-1550, 412)
 
-[node name="oneway_platform3" parent="." instance=ExtResource("6_uxgpf")]
-position = Vector2(-872, -276)
+[node name="platform3" parent="." instance=ExtResource("8_lta6m")]
+position = Vector2(-512, 319)
 
-[node name="falling_oneway_platform" parent="." instance=ExtResource("7_j7wrd")]
-position = Vector2(-1766, 194)
+[node name="platform4" parent="." instance=ExtResource("8_lta6m")]
+position = Vector2(-1277, 220)
 
-[node name="falling_oneway_platform2" parent="." instance=ExtResource("7_j7wrd")]
-position = Vector2(-1558, -2)
+[node name="platform5" parent="." instance=ExtResource("8_lta6m")]
+position = Vector2(64, 549)
+iced = true
 
-[editable path="Platforms/FallingPlatform2"]
+[node name="platform6" parent="." instance=ExtResource("8_lta6m")]
+position = Vector2(-1286, 709)
+
+[node name="platform7" parent="." instance=ExtResource("8_lta6m")]
+position = Vector2(-426, 768)
+iced = true
+
+[node name="platform8" parent="." instance=ExtResource("8_lta6m")]
+position = Vector2(-960, 952)
+
+[node name="platform9" parent="." instance=ExtResource("8_lta6m")]
+position = Vector2(-154, 140)
+
+[node name="platform10" parent="." instance=ExtResource("8_lta6m")]
+position = Vector2(-966, 51)
+
+[node name="platform11" parent="." instance=ExtResource("8_lta6m")]
+position = Vector2(-2072, 60)
+
+[node name="platform12" parent="." instance=ExtResource("8_lta6m")]
+position = Vector2(-2105, 272)
+
+[node name="platform13" parent="." instance=ExtResource("8_lta6m")]
+position = Vector2(-2018, 571)
+
+[node name="platform14" parent="." instance=ExtResource("8_lta6m")]
+position = Vector2(-1768, 900)
+
+[connection signal="camera_moved" from="ScreenCamera" to="." method="_on_screen_camera_camera_moved"]

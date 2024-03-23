@@ -15,10 +15,19 @@ var face_direction := 1
 var x_dir := 1
 
 @export_group("Basic mouvement") 
-@export var max_speed: float = 560
+@export var default_max_speed: float = 560
+var max_speed: float = default_max_speed
 @export var acceleration: float = 2880
-@export var turning_acceleration : float = 9600
-@export var deceleration: float = 3200
+@export var default_turning_acceleration : float = 9600
+var turning_acceleration: float = default_turning_acceleration
+@export var default_deceleration: float = 3200
+var deceleration: float = default_deceleration
+# ------------------------------------------ #
+
+@export_subgroup("Iced mouvement")
+@export var iced_max_speed: float = 780
+@export var iced_deceleration: float = 2
+@export var iced_turning_acceleration: float = 3200
 # ------------------------------------------ #
 
 # GRAVITY ----- #
@@ -69,14 +78,24 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func platform_collide() -> void:
-	if left_ray.is_colliding():
-		var collision = left_ray.get_collider().get_parent()
+	if left_ray.is_colliding() or right_ray.is_colliding():
+		var collision = null
+		if left_ray.is_colliding():
+			collision = left_ray.get_collider().get_parent()
+		elif right_ray.is_colliding():
+			collision = right_ray.get_collider().get_parent()
+			
 		if collision.has_method("drop") and Input.is_action_pressed("down"):
 			collision.drop()
-	if right_ray.is_colliding():
-		var collision = right_ray.get_collider().get_parent()
-		if collision.has_method("drop") and Input.is_action_pressed("down"):
-			collision.drop()
+		
+		if collision.has_method("is_iced"):
+			if collision.is_iced():
+				max_speed = iced_max_speed
+				deceleration = iced_deceleration
+	else:
+		max_speed = default_max_speed
+		deceleration = default_deceleration
+	
 
 func x_movement(delta: float) -> void:
 	x_dir = get_input()["x"]
