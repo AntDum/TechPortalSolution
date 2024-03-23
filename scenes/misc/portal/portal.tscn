@@ -1,5 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjxssm6snqvk6"]
+[gd_scene load_steps=5 format=3 uid="uid://cjxssm6snqvk6"]
 
 [ext_resource type="PackedScene" uid="uid://shswww7ahx4w" path="res://scenes/misc/collectibles/collectible.tscn" id="1_iyr22"]
 
+[sub_resource type="Animation" id="Animation_4dtkb"]
+resource_name = "portal_open"
+
+[sub_resource type="Animation" id="Animation_3syw8"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eatyw"]
+_data = {
+"RESET": SubResource("Animation_3syw8"),
+"portal_open": SubResource("Animation_4dtkb")
+}
+
 [node name="collectible" instance=ExtResource("1_iyr22")]
+
+[node name="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_eatyw")
+}
