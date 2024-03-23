@@ -1,28 +1,28 @@
 [gd_scene load_steps=5 format=3 uid="uid://dy1qlrdn8kada"]
 
-[ext_resource type="PackedScene" uid="uid://df1uf82dkhstx" path="res://scenes/level/desert/desert_tableau_A1.tscn" id="1_2vnve"]
-[ext_resource type="PackedScene" uid="uid://bw7r7ks8v80lc" path="res://scenes/level/desert/desert_tableau_B1.tscn" id="2_8m4ta"]
+[ext_resource type="PackedScene" uid="uid://bb638ymigeclx" path="res://scenes/level/desert/desert_tableau_A1.tscn" id="1_2vnve"]
+[ext_resource type="PackedScene" uid="uid://cevavnfoulchd" path="res://scenes/level/desert/desert_tableau_B1.tscn" id="2_8m4ta"]
 [ext_resource type="PackedScene" uid="uid://c8cmypufl6l32" path="res://scenes/player/player.tscn" id="3_qo1os"]
 [ext_resource type="PackedScene" uid="uid://lrbobe03y04y" path="res://scenes/misc/camera/ScreenCamera.tscn" id="4_icnv0"]
 
 [node name="DesertRoom" type="Node2D"]
 
-[node name="desertTableauA1" parent="." instance=ExtResource("1_2vnve")]
-position = Vector2(1, 0)
+[node name="DesertTableau1" parent="." instance=ExtResource("1_2vnve")]
 
-[node name="DesertTableauB1" parent="." instance=ExtResource("2_8m4ta")]
-position = Vector2(-1920, -1)
-
-[node name="DesertTableauB2" parent="." instance=ExtResource("2_8m4ta")]
+[node name="DesertTableau2" parent="." instance=ExtResource("2_8m4ta")]
 position = Vector2(0, 1080)
 
-[node name="DesertTableauA1" parent="." instance=ExtResource("1_2vnve")]
-position = Vector2(-1920, 1080)
+[node name="DesertTableau3" parent="." instance=ExtResource("1_2vnve")]
+position = Vector2(1920, 1080)
+
+[node name="DesertTableauA2" parent="." instance=ExtResource("2_8m4ta")]
+position = Vector2(1920, 0)
 
 [node name="Player" parent="." instance=ExtResource("3_qo1os")]
 position = Vector2(944, 490)
 scale = Vector2(0.5, 0.5)
 
 [node name="ScreenCamera" parent="." instance=ExtResource("4_icnv0")]
-position = Vector2(24.3644, -25.5924)
+position = Vector2(963, 548)
 target = NodePath("../Player")
+align_time = 4.0
