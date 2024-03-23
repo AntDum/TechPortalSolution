@@ -23,7 +23,7 @@ target = NodePath("../Player")
 [node name="IceTableauA1" parent="." instance=ExtResource("4_c6rgl")]
 
 [node name="IceTableauB1" parent="." instance=ExtResource("5_g2n2f")]
-position = Vector2(1920, 1)
+position = Vector2(1920, 0)
 
 [node name="IceTableauA2" parent="." instance=ExtResource("4_c6rgl")]
 position = Vector2(1920, 1080)
