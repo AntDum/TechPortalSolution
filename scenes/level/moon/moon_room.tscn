@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://2yo76w6d71ek"]
+
+[ext_resource type="Texture2D" uid="uid://ciisxx320geok" path="res://assets/sprites/moon_bckg.png" id="1_dufwt"]
+[ext_resource type="PackedScene" uid="uid://c8cmypufl6l32" path="res://scenes/player/player.tscn" id="2_ogh6f"]
+[ext_resource type="PackedScene" uid="uid://lrbobe03y04y" path="res://scenes/misc/camera/ScreenCamera.tscn" id="3_7rrbj"]
+[ext_resource type="PackedScene" uid="uid://weq3rc784pck" path="res://scenes/level/moon/moon_tableau_A1.tscn" id="4_c6rgl"]
+[ext_resource type="PackedScene" uid="uid://blullxtmxkqun" path="res://scenes/level/moon/moon_tableau_B1.tscn" id="5_g2n2f"]
+
+[node name="IceRoom" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1920, 1080)
+texture = ExtResource("1_dufwt")
+
+[node name="Player" parent="." instance=ExtResource("2_ogh6f")]
+position = Vector2(944, 490)
+scale = Vector2(0.5, 0.5)
+
+[node name="ScreenCamera" parent="." instance=ExtResource("3_7rrbj")]
+position = Vector2(963, 548)
+target = NodePath("../Player")
+
+[node name="IceTableauA1" parent="." instance=ExtResource("4_c6rgl")]
+
+[node name="IceTableauB1" parent="." instance=ExtResource("5_g2n2f")]
+position = Vector2(1920, 1)
+
+[node name="IceTableauA2" parent="." instance=ExtResource("4_c6rgl")]
+position = Vector2(1920, 1080)
+
+[node name="IceTableauB2" parent="." instance=ExtResource("5_g2n2f")]
+position = Vector2(0, 1080)

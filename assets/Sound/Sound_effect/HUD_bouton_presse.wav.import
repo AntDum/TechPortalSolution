@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cd7m02ewoae3w"
-path="res://.godot/imported/HUD_bouton_presse.wav-1c1aaa851fb7bf1719519ad29e4cd21a.sample"
+path="res://.godot/imported/HUD_bouton_presse.wav-a06af3a16ec8c83da728040e66f229f8.sample"
 
 [deps]
 
-source_file="res://assets/sound/Sound_effect/HUD_bouton_presse.wav"
-dest_files=["res://.godot/imported/HUD_bouton_presse.wav-1c1aaa851fb7bf1719519ad29e4cd21a.sample"]
+source_file="res://assets/Sound/Sound_effect/HUD_bouton_presse.wav"
+dest_files=["res://.godot/imported/HUD_bouton_presse.wav-a06af3a16ec8c83da728040e66f229f8.sample"]
 
 [params]
 

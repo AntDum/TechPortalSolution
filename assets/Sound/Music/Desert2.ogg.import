@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://deq3r6rgs6t3g"
-path="res://.godot/imported/Desert2.ogg-3eae85a96804ee37611662ccf545b16d.oggvorbisstr"
+path="res://.godot/imported/Desert2.ogg-26aa0276cd8b486d96837974b4483ea6.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/sound/Music/Desert2.ogg"
-dest_files=["res://.godot/imported/Desert2.ogg-3eae85a96804ee37611662ccf545b16d.oggvorbisstr"]
+source_file="res://assets/Sound/Music/Desert2.ogg"
+dest_files=["res://.godot/imported/Desert2.ogg-26aa0276cd8b486d96837974b4483ea6.oggvorbisstr"]
 
 [params]
 
