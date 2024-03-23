@@ -16,9 +16,9 @@ func play_music_menu():
 func stop_music_menu():
 	stop()
 	
-func play_fx(stream:AudioStream):
+func play_fx(stream_audio:AudioStream):
 	var fx_player = AudioStreamPlayer.new()
-	fx_player.stream = stream
+	fx_player.stream = stream_audio
 	fx_player.bus = "SFX"
 	add_child(fx_player)
 	fx_player.play()
