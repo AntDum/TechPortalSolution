@@ -1,0 +1,15 @@
+shader_type canvas_item;
+
+uniform float time_scale : hint_range(0.0, 1.0) = 0.1;
+uniform float dissolve_speed : hint_range(0.0, 1.0) = 0.5;
+uniform float dissolve_threshold : hint_range(0.0, 1.0) = 0.5;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+
+void fragment() {
+	float dissolve_time = TIME * time_scale;
+	// Use a noise function to create a dissolve effect
+	float noise_value = textureLod(SCREEN_TEXTURE, SCREEN_UV, 0.0).r;
+	float dissolve_factor = smoothstep(dissolve_threshold, dissolve_threshold + dissolve_speed, noise_value + dissolve_time);
+	// Apply the dissolve factor to the alpha channel
+	COLOR.a *= dissolve_factor;
+}
