@@ -23,6 +23,9 @@ extends Node2D
 @onready var collision = $StaticBody2D/CollisionShape2D
 @onready var area = $Area_oneway
 
+#sound
+@onready var breaking_fx = preload("res://assets/Sound/Sound_effect/Game/Bruits_Pierre_casse.wav")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Set up the timers
@@ -68,6 +71,7 @@ func _on_shake_timer_timeout():
 	Animator.play("shake")
 	# Start the reset timer
 	ResetTimer.start()
+	AudioPlayer.play_fx(breaking_fx)
 
 
 func _on_reset_timer_timeout():

@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://uvojpjcfvkp4" path="res://assets/Sound/Sound_effect/Game/Bruits_atteri_3.wav" id="4_6uw6b"]
 [ext_resource type="AudioStream" uid="uid://et17y26ukqus" path="res://assets/Sound/Sound_effect/Game/Bruits_atteri_1.wav" id="5_q5ld2"]
 [ext_resource type="FontFile" uid="uid://bitsyudivnk7q" path="res://assets/font/quantum.otf" id="6_tufix"]
-[ext_resource type="AudioStream" uid="uid://dv2wvappn7inc" path="res://assets/sound/Sound_effect/Game/Bruit_respiration.ogg" id="7_dvqpc"]
+[ext_resource type="AudioStream" uid="uid://dv2wvappn7inc" path="res://assets/Sound/Sound_effect/Game/Bruit_respiration.ogg" id="7_dvqpc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f05xk"]
 size = Vector2(128, 128)
