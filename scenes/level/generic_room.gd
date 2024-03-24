@@ -105,9 +105,9 @@ func place_rooms(pos: Vector2, biome: Room.Biome, ignore: Room.SubRoomType, firs
 			if(sub_type == Room.SubRoomType.II):
 				room.openGatesDL()
 			if(sub_type == Room.SubRoomType.III):
-				room.openGatesUL()
-			if(sub_type == Room.SubRoomType.IV):
 				room.openGatesUR()
+			if(sub_type == Room.SubRoomType.IV):
+				room.openGatesUL()
 				
 			room.position = new_pos * screen_size
 			platform_child.add_child(room)
