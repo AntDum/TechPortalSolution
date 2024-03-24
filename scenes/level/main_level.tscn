@@ -58,4 +58,5 @@ target = NodePath("../Player")
 
 [connection signal="generator_fixed" from="GameManager" to="UI" method="_on_game_manager_generator_fixed"]
 [connection signal="item_collected" from="GameManager" to="UI" method="_on_game_manager_item_collected"]
+[connection signal="dead" from="Player" to="UI" method="_on_player_dead"]
 [connection signal="camera_moved" from="ScreenCamera" to="GameManager" method="_on_screen_camera_camera_moved"]

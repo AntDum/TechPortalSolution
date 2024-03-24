@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://yew1372y48ct" path="res://scenes/ui/game_over.tscn" id="3_lvm5j"]
 [ext_resource type="Texture2D" uid="uid://qnvakeik63b4" path="res://assets/sprites/wrench.png" id="4_rahja"]
 [ext_resource type="Texture2D" uid="uid://brsypah5262fp" path="res://assets/sprites/portal_stone.png" id="5_35ndj"]
-[ext_resource type="PackedScene" uid="uid://cfgscj6kjo832" path="res://scenes/UI/win.tscn" id="6_mxoxd"]
+[ext_resource type="PackedScene" uid="uid://cfgscj6kjo832" path="res://scenes/ui/win.tscn" id="6_mxoxd"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_h8qvu"]
 frequency = 0.0245

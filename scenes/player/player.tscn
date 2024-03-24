@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_cdao0"]
 [ext_resource type="Texture2D" uid="uid://b3jndjfd03m5f" path="res://assets/sprites/player.png" id="2_c68qk"]
 [ext_resource type="Script" path="res://scenes/player/Sprite_player.gd" id="3_32r44"]
-[ext_resource type="AudioStream" uid="uid://uvojpjcfvkp4" path="res://assets/Sound/Sound_effect/Game/Bruits_atteri_3.wav" id="4_6uw6b"]
-[ext_resource type="AudioStream" uid="uid://et17y26ukqus" path="res://assets/Sound/Sound_effect/Game/Bruits_atteri_1.wav" id="5_q5ld2"]
+[ext_resource type="AudioStream" uid="uid://uvojpjcfvkp4" path="res://assets/sound/Sound_effect/Game/Bruits_atteri_3.wav" id="4_6uw6b"]
+[ext_resource type="AudioStream" uid="uid://et17y26ukqus" path="res://assets/sound/Sound_effect/Game/Bruits_atteri_1.wav" id="5_q5ld2"]
 [ext_resource type="FontFile" uid="uid://bitsyudivnk7q" path="res://assets/font/quantum.otf" id="6_tufix"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f05xk"]

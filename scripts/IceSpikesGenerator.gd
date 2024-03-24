@@ -10,7 +10,7 @@ extends Node2D
 func _on_random_cooldown_timeout():
 	var iceSpikeInstance = iceSpike.instantiate()
 	iceSpikeInstance.position = Vector2(1,0) * randi_range(100,1820)
-	add_child(iceSpikeInstance)
+	get_parent().get_parent().add_child(iceSpikeInstance)
 	$RandomCooldown.start(abs(randfn(mean_time_bt_spikes,deviation_time_bt_spikes)))
 
 func enable():
