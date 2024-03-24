@@ -18,6 +18,38 @@ destroyable = false
 [node name="Sprite2D" parent="platform" index="0"]
 texture = ExtResource("3_6jtut")
 
+[node name="platform3" parent="." instance=ExtResource("2_wrlkf")]
+position = Vector2(1246, 660)
+scale = Vector2(0.2, 1)
+destroyable = false
+
+[node name="Sprite2D" parent="platform3" index="0"]
+texture = ExtResource("3_6jtut")
+
+[node name="platform4" parent="." instance=ExtResource("2_wrlkf")]
+position = Vector2(1599, 500)
+scale = Vector2(0.2, 1)
+destroyable = false
+
+[node name="Sprite2D" parent="platform4" index="0"]
+texture = ExtResource("3_6jtut")
+
+[node name="platform6" parent="." instance=ExtResource("2_wrlkf")]
+position = Vector2(1458, 268)
+scale = Vector2(0.2, 1)
+destroyable = false
+
+[node name="Sprite2D" parent="platform6" index="0"]
+texture = ExtResource("3_6jtut")
+
+[node name="platform5" parent="." instance=ExtResource("2_wrlkf")]
+position = Vector2(213, 226)
+scale = Vector2(0.2, 1)
+destroyable = false
+
+[node name="Sprite2D" parent="platform5" index="0"]
+texture = ExtResource("3_6jtut")
+
 [node name="platform2" parent="." instance=ExtResource("2_wrlkf")]
 position = Vector2(726, 390)
 scale = Vector2(2, 1)
@@ -27,4 +59,8 @@ destroyable = false
 texture = ExtResource("3_6jtut")
 
 [editable path="platform"]
+[editable path="platform3"]
+[editable path="platform4"]
+[editable path="platform6"]
+[editable path="platform5"]
 [editable path="platform2"]

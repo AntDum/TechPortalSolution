@@ -10,7 +10,7 @@ script = ExtResource("1_14b42")
 [node name="TableauB" parent="." instance=ExtResource("1_dlmjh")]
 
 [node name="platform" parent="TableauB" instance=ExtResource("2_w7a6g")]
-position = Vector2(1428, 246)
+position = Vector2(1287, 225)
 
 [node name="platform2" parent="TableauB" instance=ExtResource("2_w7a6g")]
 position = Vector2(483, 886)
@@ -21,7 +21,11 @@ position = Vector2(708, 741)
 scale = Vector2(0.3, 1)
 
 [node name="platform7" parent="TableauB" instance=ExtResource("2_w7a6g")]
-position = Vector2(419, 312)
+position = Vector2(620, 536)
+scale = Vector2(0.3, 1)
+
+[node name="platform9" parent="TableauB" instance=ExtResource("2_w7a6g")]
+position = Vector2(417, 383)
 scale = Vector2(0.3, 1)
 
 [node name="platform3" parent="TableauB" instance=ExtResource("2_w7a6g")]
@@ -34,6 +38,3 @@ scale = Vector2(0.3, 1)
 [node name="platform8" parent="TableauB" instance=ExtResource("2_w7a6g")]
 position = Vector2(1404, 892)
 scale = Vector2(0.3, 1)
-
-[node name="platform5" parent="TableauB" instance=ExtResource("2_w7a6g")]
-position = Vector2(1572, 133)

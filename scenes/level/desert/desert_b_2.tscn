@@ -25,20 +25,19 @@ scale = Vector2(0.1, 1)
 position = Vector2(445, 946)
 scale = Vector2(0.1, 1)
 
-[node name="platform13" parent="TableauB" instance=ExtResource("2_d51s6")]
-position = Vector2(445, 820)
+[node name="platform14" parent="TableauB" instance=ExtResource("2_d51s6")]
+position = Vector2(251, 672)
 scale = Vector2(0.1, 1)
 
-[node name="platform14" parent="TableauB" instance=ExtResource("2_d51s6")]
-position = Vector2(446, 680)
-scale = Vector2(0.1, 1)
+[node name="platform13" parent="TableauB/platform14" instance=ExtResource("2_d51s6")]
+position = Vector2(970, 130)
 
 [node name="platform15" parent="TableauB" instance=ExtResource("2_d51s6")]
 position = Vector2(448, 549)
 scale = Vector2(0.1, 1)
 
 [node name="platform3" parent="TableauB" instance=ExtResource("2_d51s6")]
-position = Vector2(493, 388)
+position = Vector2(804, 283)
 scale = Vector2(0.1, 1)
 
 [node name="platform4" parent="TableauB" instance=ExtResource("2_d51s6")]
