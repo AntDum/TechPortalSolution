@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3oy4g6jpvaal"]
+[gd_scene load_steps=5 format=3 uid="uid://d3oy4g6jpvaal"]
 
 [ext_resource type="Script" path="res://scenes/menu/Main_menu.gd" id="1_6nsja"]
 [ext_resource type="PackedScene" uid="uid://lvx8m071lxvj" path="res://scenes/menu/button.tscn" id="1_ffjsw"]
 [ext_resource type="Texture2D" uid="uid://bj16fundoqjb4" path="res://assets/sprites/Menu_temp.jpg" id="3_qnun4"]
+[ext_resource type="FontFile" uid="uid://bitsyudivnk7q" path="res://assets/font/quantum.otf" id="4_6w1gj"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -49,10 +50,15 @@ text = "Quit"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "A game by 
-Tchoupi"
+offset_left = 7.0
+offset_top = 996.0
+offset_right = 1642.0
+offset_bottom = 1075.0
+theme_override_fonts/font = ExtResource("4_6w1gj")
+theme_override_font_sizes/font_size = 30
+text = "A game by Tazk Kompleted : Tchoupi, Antoine, Zoé, Kuruk
+Game Jam of Louvain-Li_nux 24-03-2024
+"
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Music_sound" to="." method="_on_music_sound_pressed"]
