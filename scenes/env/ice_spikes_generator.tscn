@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsifojcl8orq0"]
+
+[ext_resource type="Script" path="res://scripts/IceSpikesGenerator.gd" id="1_aab02"]
+[ext_resource type="PackedScene" uid="uid://cju50uishkhi1" path="res://scenes/env/ice_spike.tscn" id="2_5gb2t"]
+
+[node name="IceSpikesGenerator" type="Node2D"]
+script = ExtResource("1_aab02")
+iceSpike = ExtResource("2_5gb2t")
+
+[node name="RandomCooldown" type="Timer" parent="."]
+
+[connection signal="timeout" from="RandomCooldown" to="." method="_on_random_cooldown_timeout"]
