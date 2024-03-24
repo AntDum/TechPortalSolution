@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://shswww7ahx4w" path="res://scenes/misc/collectibles/collectible.tscn" id="1_iyr22"]
 [ext_resource type="Script" path="res://scenes/misc/portal/portal.gd" id="2_nyjb7"]
-[ext_resource type="AudioStream" uid="uid://dxed0pj4gkpht" path="res://assets/sound/Sound_effect/Game/Bruits_approche_portail3.wav" id="4_av74r"]
+[ext_resource type="AudioStream" uid="uid://dxed0pj4gkpht" path="res://assets/Sound/Sound_effect/Game/Bruits_approche_portail3.wav" id="4_av74r"]
 [ext_resource type="Texture2D" uid="uid://c472pw5ji6caa" path="res://assets/sprites/broken_portal.png" id="4_rin86"]
 
 [sub_resource type="Animation" id="Animation_3syw8"]

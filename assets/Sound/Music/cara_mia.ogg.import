@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://od25xt30xp4c"
-path="res://.godot/imported/cara_mia.ogg-7a80ab88d7b374a9236e15b9f6c35a95.oggvorbisstr"
+path="res://.godot/imported/cara_mia.ogg-5fc1e74b13fd7b943d0be31eed724884.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/sound/Music/cara_mia.ogg"
-dest_files=["res://.godot/imported/cara_mia.ogg-7a80ab88d7b374a9236e15b9f6c35a95.oggvorbisstr"]
+source_file="res://assets/Sound/Music/cara_mia.ogg"
+dest_files=["res://.godot/imported/cara_mia.ogg-5fc1e74b13fd7b943d0be31eed724884.oggvorbisstr"]
 
 [params]
 
