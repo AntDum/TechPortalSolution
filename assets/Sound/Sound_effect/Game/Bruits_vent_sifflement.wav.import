@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ceo78bo2vpxd1"
-path="res://.godot/imported/Bruits_vent_sifflement.wav-48f17cf1c8b7f17ff29fa2ba5c5e6adb.sample"
+path="res://.godot/imported/Bruits_vent_sifflement.wav-525d1f70f05eae899311571d6782e092.sample"
 
 [deps]
 
-source_file="res://assets/sound/Sound_effect/Game/Bruits_vent_sifflement.wav"
-dest_files=["res://.godot/imported/Bruits_vent_sifflement.wav-48f17cf1c8b7f17ff29fa2ba5c5e6adb.sample"]
+source_file="res://assets/Sound/Sound_effect/Game/Bruits_vent_sifflement.wav"
+dest_files=["res://.godot/imported/Bruits_vent_sifflement.wav-525d1f70f05eae899311571d6782e092.sample"]
 
 [params]
 

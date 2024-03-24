@@ -9,16 +9,16 @@
 [ext_resource type="PackedScene" uid="uid://cl8rr2b7tanrp" path="res://scenes/level/generic_room.tscn" id="5_b16af"]
 [ext_resource type="PackedScene" path="res://scenes/level/desert/desert_a_2.tscn" id="5_d1pyu"]
 [ext_resource type="PackedScene" uid="uid://cjxssm6snqvk6" path="res://scenes/misc/portal/portal.tscn" id="5_dxvwj"]
-[ext_resource type="PackedScene" path="res://scenes/level/desert/desert_b_1.tscn" id="6_1acrp"]
-[ext_resource type="PackedScene" path="res://scenes/level/desert/desert_b_2.tscn" id="7_nxkv6"]
-[ext_resource type="PackedScene" uid="uid://cy1d6sds6iv0a" path="res://scenes/env/desert_background.tscn" id="8_gbu0i"]
-[ext_resource type="PackedScene" path="res://scenes/level/ice/ice_tableau_a_1.tscn" id="9_efo8l"]
-[ext_resource type="PackedScene" path="res://scenes/level/ice/tableau_b_1.tscn" id="10_k7v3k"]
-[ext_resource type="PackedScene" uid="uid://bnea4715bwmr2" path="res://scenes/env/ice_background.tscn" id="11_dguld"]
-[ext_resource type="PackedScene" path="res://scenes/level/moon/moon_tableau_a_1.tscn" id="12_iynvx"]
-[ext_resource type="PackedScene" path="res://scenes/level/moon/moon_tableau_b_1.tscn" id="13_lsyac"]
+[ext_resource type="PackedScene" uid="uid://dntpatuqgudc2" path="res://scenes/level/desert/desert_b_1.tscn" id="6_1acrp"]
+[ext_resource type="PackedScene" uid="uid://dn8ue64dqa8u1" path="res://scenes/level/desert/desert_b_2.tscn" id="7_nxkv6"]
+[ext_resource type="PackedScene" uid="uid://cy1d6sds6iv0a" path="res://scenes/env/desert_background.tscn" id="8_03jcs"]
+[ext_resource type="PackedScene" uid="uid://demxs5diaqax6" path="res://scenes/level/ice/ice_tableau_a_1.tscn" id="9_efo8l"]
+[ext_resource type="PackedScene" uid="uid://0oowrmkidxkv" path="res://scenes/level/ice/tableau_b_1.tscn" id="10_k7v3k"]
+[ext_resource type="PackedScene" uid="uid://bnea4715bwmr2" path="res://scenes/env/ice_background.tscn" id="11_c2nat"]
+[ext_resource type="PackedScene" uid="uid://dvfpna1lxf265" path="res://scenes/level/moon/moon_tableau_a_1.tscn" id="12_iynvx"]
+[ext_resource type="PackedScene" uid="uid://btb5plxi4j27o" path="res://scenes/level/moon/moon_tableau_b_1.tscn" id="13_lsyac"]
 [ext_resource type="PackedScene" uid="uid://dwyroaw7tg3ek" path="res://scenes/misc/collectibles/generator.tscn" id="14_5ubc2"]
-[ext_resource type="PackedScene" uid="uid://dnlgktmfi55rt" path="res://scenes/env/moon_background.tscn" id="14_q8nfd"]
+[ext_resource type="PackedScene" uid="uid://dnlgktmfi55rt" path="res://scenes/env/moon_background.tscn" id="14_rgxi5"]
 [ext_resource type="PackedScene" uid="uid://07ktkj0xxlhw" path="res://scenes/misc/collectibles/wrench.tscn" id="15_u7hj4"]
 [ext_resource type="PackedScene" uid="uid://c20pftwnjf0xs" path="res://scenes/misc/collectibles/stone.tscn" id="16_4ilak"]
 
@@ -36,13 +36,13 @@ ui = NodePath("../UI")
 unique_name_in_owner = true
 desert_A = Array[PackedScene]([ExtResource("4_tbl0p"), ExtResource("5_d1pyu")])
 desert_B = Array[PackedScene]([ExtResource("6_1acrp"), ExtResource("7_nxkv6")])
-desert_background = ExtResource("8_gbu0i")
+desert_background = ExtResource("8_03jcs")
 ice_A = Array[PackedScene]([ExtResource("9_efo8l")])
 ice_B = Array[PackedScene]([ExtResource("10_k7v3k")])
-ice_background = ExtResource("11_dguld")
+ice_background = ExtResource("11_c2nat")
 moon_A = Array[PackedScene]([ExtResource("12_iynvx")])
 moon_B = Array[PackedScene]([ExtResource("13_lsyac")])
-moon_background = ExtResource("14_q8nfd")
+moon_background = ExtResource("14_rgxi5")
 portal = ExtResource("5_dxvwj")
 generator = ExtResource("14_5ubc2")
 wrench = ExtResource("15_u7hj4")

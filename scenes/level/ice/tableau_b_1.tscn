@@ -13,6 +13,7 @@ script = ExtResource("1_c8bu7")
 [node name="platform" parent="." instance=ExtResource("3_870ej")]
 position = Vector2(1669, 649)
 scale = Vector2(0.2, 1)
+destroyable = false
 
 [node name="Sprite2D" parent="platform" index="0"]
 texture = ExtResource("4_gyjx6")
@@ -20,6 +21,7 @@ texture = ExtResource("4_gyjx6")
 [node name="platform8" parent="." instance=ExtResource("3_870ej")]
 position = Vector2(1489, 859)
 scale = Vector2(0.2, 1)
+destroyable = false
 
 [node name="Sprite2D" parent="platform8" index="0"]
 texture = ExtResource("4_gyjx6")
@@ -27,6 +29,7 @@ texture = ExtResource("4_gyjx6")
 [node name="platform9" parent="." instance=ExtResource("3_870ej")]
 position = Vector2(1236, 721)
 scale = Vector2(0.2, 1)
+destroyable = false
 
 [node name="Sprite2D" parent="platform9" index="0"]
 texture = ExtResource("4_gyjx6")
@@ -34,6 +37,7 @@ texture = ExtResource("4_gyjx6")
 [node name="platform2" parent="." instance=ExtResource("3_870ej")]
 position = Vector2(699, 613)
 scale = Vector2(0.2, 1)
+destroyable = false
 
 [node name="Sprite2D" parent="platform2" index="0"]
 texture = ExtResource("4_gyjx6")
@@ -41,6 +45,7 @@ texture = ExtResource("4_gyjx6")
 [node name="platform10" parent="." instance=ExtResource("3_870ej")]
 position = Vector2(558, 784)
 scale = Vector2(0.2, 1)
+destroyable = false
 
 [node name="Sprite2D" parent="platform10" index="0"]
 texture = ExtResource("4_gyjx6")
@@ -48,6 +53,7 @@ texture = ExtResource("4_gyjx6")
 [node name="platform11" parent="." instance=ExtResource("3_870ej")]
 position = Vector2(395, 964)
 scale = Vector2(0.2, 1)
+destroyable = false
 
 [node name="Sprite2D" parent="platform11" index="0"]
 texture = ExtResource("4_gyjx6")
@@ -55,6 +61,7 @@ texture = ExtResource("4_gyjx6")
 [node name="platform3" parent="." instance=ExtResource("3_870ej")]
 position = Vector2(527, 534)
 scale = Vector2(0.2, 1)
+destroyable = false
 
 [node name="Sprite2D" parent="platform3" index="0"]
 texture = ExtResource("4_gyjx6")
@@ -62,6 +69,7 @@ texture = ExtResource("4_gyjx6")
 [node name="platform4" parent="." instance=ExtResource("3_870ej")]
 position = Vector2(642, 365)
 scale = Vector2(0.2, 1)
+destroyable = false
 
 [node name="Sprite2D" parent="platform4" index="0"]
 texture = ExtResource("4_gyjx6")
@@ -69,6 +77,7 @@ texture = ExtResource("4_gyjx6")
 [node name="platform5" parent="." instance=ExtResource("3_870ej")]
 position = Vector2(441, 280)
 scale = Vector2(0.2, 1)
+destroyable = false
 
 [node name="Sprite2D" parent="platform5" index="0"]
 texture = ExtResource("4_gyjx6")
@@ -76,6 +85,7 @@ texture = ExtResource("4_gyjx6")
 [node name="platform6" parent="." instance=ExtResource("3_870ej")]
 position = Vector2(1681, 202)
 scale = Vector2(0.2, 1)
+destroyable = false
 
 [node name="Sprite2D" parent="platform6" index="0"]
 texture = ExtResource("4_gyjx6")
@@ -83,6 +93,7 @@ texture = ExtResource("4_gyjx6")
 [node name="platform7" parent="." instance=ExtResource("3_870ej")]
 position = Vector2(1807, 419)
 scale = Vector2(0.2, 1)
+destroyable = false
 
 [node name="Sprite2D" parent="platform7" index="0"]
 texture = ExtResource("4_gyjx6")
