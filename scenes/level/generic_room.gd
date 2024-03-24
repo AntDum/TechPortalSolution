@@ -25,7 +25,7 @@ extends Node2D
 @export_subgroup("Collectible")
 @export var wrench : PackedScene
 @export var portalite : PackedScene
-@export var probability_spawn_item : float = 0.5
+@export var probability_spawn_item : float = 0.3
 
 var wrench_is_spawned = false
 var portalite_is_spawned = false
@@ -119,13 +119,13 @@ func place_rooms(pos: Vector2, biome: Room.Biome, ignore: Room.SubRoomType, firs
 
 				elif randf() < probability_spawn_item && can_spawn_items:
 					print("Spawning item at ", portal_position)
-					if not wrench_is_spawned:
+					if randf() < 0.5:
 						var wrench_instance = wrench.instantiate()
 						room.add_child(wrench_instance)
 						wrench_instance.global_position = portal_position
 						wrench_is_spawned = true
 						wrench_instance.connect("collected", game_manager._on_wrench_collected)
-					elif not portalite_is_spawned:
+					else:
 						var portalite_instance = portalite.instantiate()
 						room.add_child(portalite_instance)
 						portalite_instance.global_position = portal_position
@@ -136,9 +136,10 @@ func place_rooms(pos: Vector2, biome: Room.Biome, ignore: Room.SubRoomType, firs
 					print("Spawning generator at ", portal_position)
 					var generator_instance = generator.instantiate()
 					room.add_child(generator_instance)
+					generator_instance.game_manager = game_manager
 					generator_instance.global_position = portal_position
-					generator_instance.connect("collected", game_manager._on_generator_collected)
-					
+					generator_instance.connect("repaired", game_manager._on_generator_collected)
+
 
 				else:
 					print("Spawning portal at ", portal_position)

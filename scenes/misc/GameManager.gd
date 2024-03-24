@@ -10,9 +10,10 @@ signal generator_fixed
 @export var room_before_end := 5
 @export var min_before_items := 2
 
-
 var room_count := 0
 
+var wrench_collected := false
+var portalite_collected := false
 
 @export_category("Instance")
 @export var player_path : NodePath
@@ -111,11 +112,18 @@ func _on_room_entered(biome1 : Room.Biome, biome2 : Room.Biome) -> void:
 	else:
 		Player.breathe()
 
+func can_repair_generator() -> bool:
+	return wrench_collected && portalite_collected
+
 func _on_wrench_collected() -> void:
 	emit_signal("item_collected", "wrench")
+	wrench_collected = true
 
 func _on_portalite_collected() -> void:
 	emit_signal("item_collected", "stone")
+	portalite_collected = true
 	
 func _on_generator_collected() -> void:
+	if ! can_repair_generator():
+		return
 	emit_signal("generator_fixed")
