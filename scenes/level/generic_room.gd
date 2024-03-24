@@ -25,7 +25,7 @@ extends Node2D
 @export_subgroup("Collectible")
 @export var wrench : PackedScene
 @export var portalite : PackedScene
-@export var probability_spawn_item : float = 0.2
+@export var probability_spawn_item : float = 0.35
 
 var wrench_is_spawned = false
 var portalite_is_spawned = false
@@ -113,7 +113,8 @@ func place_rooms(pos: Vector2, biome: Room.Biome, ignore: Room.SubRoomType, firs
 			platform_child.add_child(room)
 			print("Placed room at ", new_pos, " ignore ", ignore, " in biome ", biome, " type ", sub_type)
 
-			
+			var has_spawned_item = false
+
 			var portal_points = get_tree().get_nodes_in_group("Portail_point")
 			for portal_point in portal_points:
 				var portal_position = portal_point.global_position
@@ -125,7 +126,7 @@ func place_rooms(pos: Vector2, biome: Room.Biome, ignore: Room.SubRoomType, firs
 					ignore == sub_type:
 					continue
 
-				elif randf() < probability_spawn_item && can_spawn_items:
+				elif randf() < probability_spawn_item && can_spawn_items && (!has_spawned_item):
 					print("Spawning item at ", portal_position)
 					if randf() < 0.5:
 						var wrench_instance = wrench.instantiate()
@@ -139,6 +140,7 @@ func place_rooms(pos: Vector2, biome: Room.Biome, ignore: Room.SubRoomType, firs
 						portalite_instance.global_position = portal_position
 						portalite_is_spawned = true
 						portalite_instance.connect("collected", game_manager._on_portalite_collected)
+					has_spawned_item = true
 
 				elif is_final && portalite_is_spawned && wrench_is_spawned && \
 					randf() < probability_spawn_item:
