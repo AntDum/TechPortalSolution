@@ -4,3 +4,4 @@
 
 [node name="desert_background" type="Sprite2D"]
 texture = ExtResource("1_11rnd")
+centered = false

@@ -4,3 +4,4 @@
 
 [node name="ice_background" type="Sprite2D"]
 texture = ExtResource("1_k15mc")
+centered = false

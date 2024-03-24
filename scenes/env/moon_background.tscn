@@ -4,3 +4,4 @@
 
 [node name="moon_background" type="Sprite2D"]
 texture = ExtResource("1_udsuw")
+centered = false

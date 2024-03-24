@@ -68,8 +68,8 @@ func place_rooms(pos: Vector2, biome: Room.Biome, ignore: Room.SubRoomType, firs
 	# B2 | A2
 
 	var background_sprite = background.instantiate()
-	background_sprite.offset = screen_size / 2
 	background_child.add_child(background_sprite)
+	background_child.position = pos * screen_size
 
 	var placed_portal = {}
 
