@@ -93,8 +93,8 @@ func _on_room_entered(biome1 : Room.Biome, biome2 : Room.Biome) -> void:
 	else:
 		Camera.get_child(0).disable()
 	if biome1 == Room.Biome.MOON || biome2 == Room.Biome.MOON:
-		print("You just entered an icy zone. Brrrrrrr")
-		Camera.get_child(0).enable()
+		print("Houston, you just entered an moony zone. ")
+		Player.suffocate()
 	else:
-		Camera.get_child(0).disable()
+		Player.breathe()
 		
