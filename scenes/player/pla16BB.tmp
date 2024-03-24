@@ -195,6 +195,5 @@ horizontal_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_dvqpc")
-bus = &"SFX"
 
 [connection signal="timeout" from="OxygenCounter" to="." method="get_killed"]

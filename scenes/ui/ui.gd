@@ -4,9 +4,11 @@ extends CanvasLayer
 	
 @onready var sand_storm = $sand_storm
 @onready var game_over = get_node("GameOver")
-@onready var dead_fx = preload("res://assets/Sound/Sound_effect/Game/Bruit_dead.wav")
 @onready var item_animator = $Collectible_UI/AnimationPlayer
 @onready var win = get_node("Win")
+
+@onready var dead_fx = preload("res://assets/Sound/Sound_effect/Game/Bruit_dead.wav")
+@onready var desert_sound = preload("res://assets/Sound/Sound_effect/Game/Bruits_vent_sifflement.wav")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,6 +19,7 @@ func _ready():
 
 func enable_sand_storm():
 	sand_storm.visible = true
+	AudioPlayer.play_fx(desert_sound)
 
 func disable_sand_storm():
 	sand_storm.visible = false

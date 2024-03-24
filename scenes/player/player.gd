@@ -242,6 +242,10 @@ func suffocate():
 	deceleration = moon_deceleration
 	turning_acceleration = moon_turning_acceleration
 	gravity_acceleration = moon_gravity_acceleration
+	#
+	#if AudioPlayer.playing == false:
+		#AudioPlayer.play()
+	#
 	
 func breathe():
 	$Label.visible = false
@@ -250,8 +254,9 @@ func breathe():
 	deceleration = default_deceleration
 	turning_acceleration = default_turning_acceleration
 	gravity_acceleration = default_gravity_acceleration
-
-
+	
+	#AudioPlayer.stop()
+	
 func get_killed():
 	print("YOU JUST DIEEEEED")
 	dead.emit()
