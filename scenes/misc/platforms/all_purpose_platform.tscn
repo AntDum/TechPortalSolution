@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://doegwdd83n18g"]
 
 [ext_resource type="Script" path="res://scenes/misc/platforms/all_purpose_platform.gd" id="1_oldfg"]
-[ext_resource type="Texture2D" uid="uid://dhtbqu1trn3d0" path="res://icon.svg" id="2_sy3sc"]
+[ext_resource type="Texture2D" uid="uid://dvqjoox7876s6" path="res://assets/sprites/sand_platform.png" id="2_jvgou"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_njg1o"]
 size = Vector2(642, 4)
@@ -168,14 +168,16 @@ _data = {
 script = ExtResource("1_oldfg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(5, 0.3)
-texture = ExtResource("2_sy3sc")
+position = Vector2(0, 15)
+scale = Vector2(2.6, 1)
+texture = ExtResource("2_jvgou")
 
 [node name="Area_fall" type="Area2D" parent="."]
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area_fall"]
 position = Vector2(0, -19)
+scale = Vector2(0.85, 1)
 shape = SubResource("RectangleShape2D_njg1o")
 
 [node name="Area_oneway" type="Area2D" parent="."]
@@ -185,6 +187,7 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area_oneway"]
 position = Vector2(0, -19)
+scale = Vector2(0.85, 1)
 shape = SubResource("RectangleShape2D_e6yw7")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -192,6 +195,7 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0.5, 0.5)
+scale = Vector2(0.85, 1)
 shape = SubResource("RectangleShape2D_1lyfw")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 

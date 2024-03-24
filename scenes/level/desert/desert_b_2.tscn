@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn8ue64dqa8u1"]
+
+[ext_resource type="PackedScene" uid="uid://cevavnfoulchd" path="res://scenes/level/desert/desert_tableau_B.tscn" id="1_7sja4"]
+[ext_resource type="PackedScene" uid="uid://doegwdd83n18g" path="res://scenes/misc/platforms/all_purpose_platform.tscn" id="2_d51s6"]
+
+[node name="desert_B1" type="Node2D"]
+
+[node name="DesertTableauA2" parent="." instance=ExtResource("1_7sja4")]
+
+[node name="platform" parent="DesertTableauA2" instance=ExtResource("2_d51s6")]
+position = Vector2(1687, 406)
+scale = Vector2(0.1, 1)
+
+[node name="platform2" parent="DesertTableauA2" instance=ExtResource("2_d51s6")]
+position = Vector2(445, 946)
+scale = Vector2(0.1, 1)
+
+[node name="platform3" parent="DesertTableauA2" instance=ExtResource("2_d51s6")]
+position = Vector2(493, 388)
+scale = Vector2(0.1, 1)
+
+[node name="platform4" parent="DesertTableauA2" instance=ExtResource("2_d51s6")]
+position = Vector2(1548, 905)
+scale = Vector2(0.1, 1)
+
+[node name="platform5" parent="DesertTableauA2" instance=ExtResource("2_d51s6")]
+position = Vector2(1360, 532)
+scale = Vector2(0.1, 1)
