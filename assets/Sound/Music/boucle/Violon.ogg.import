@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://cp8fgyuc2wj4f"
-path="res://.godot/imported/Violon.ogg-54d3d17f81ff21fb1e7598bf72a9904b.oggvorbisstr"
+path="res://.godot/imported/Violon.ogg-0ab99364586b2d2718c52fa6a4f6381d.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Sound/Music/boucle/Violon.ogg"
-dest_files=["res://.godot/imported/Violon.ogg-54d3d17f81ff21fb1e7598bf72a9904b.oggvorbisstr"]
+source_file="res://assets/sound/Music/boucle/Violon.ogg"
+dest_files=["res://.godot/imported/Violon.ogg-0ab99364586b2d2718c52fa6a4f6381d.oggvorbisstr"]
 
 [params]
 
