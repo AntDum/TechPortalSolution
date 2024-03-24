@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d2xeeurgx23de"
-path="res://.godot/imported/Bruit_Item.wav-30631201957d73b96fea744479dbf597.sample"
+path="res://.godot/imported/Bruit_Item.wav-597630ecdd0f9a54ead06023c82ccf83.sample"
 
 [deps]
 
-source_file="res://assets/Sound/Sound_effect/Game/Bruit_Item.wav"
-dest_files=["res://.godot/imported/Bruit_Item.wav-30631201957d73b96fea744479dbf597.sample"]
+source_file="res://assets/sound/Sound_effect/Game/Bruit_Item.wav"
+dest_files=["res://.godot/imported/Bruit_Item.wav-597630ecdd0f9a54ead06023c82ccf83.sample"]
 
 [params]
 
