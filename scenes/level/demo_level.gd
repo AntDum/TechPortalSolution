@@ -6,6 +6,7 @@ extends Node2D
 	#print(to)
 
 func _ready():
+	AudioPlayer.play_music_menu()
 	AudioPlayer.stop_music()
 	AudioPlayer.play_game_music()
 	

@@ -156,9 +156,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_ayupo")
 
-[node name="GameOver" parent="." instance=ExtResource("3_lvm5j")]
-visible = false
-
 [node name="Collectible_UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -182,3 +179,5 @@ libraries = {
 "": SubResource("AnimationLibrary_83p8w")
 }
 autoplay = "RESET"
+
+[node name="GameOver" parent="." instance=ExtResource("3_lvm5j")]

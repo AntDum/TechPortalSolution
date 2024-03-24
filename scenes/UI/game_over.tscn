@@ -10,10 +10,11 @@ script = ExtResource("1_wd53c")
 
 [node name="Button" parent="." instance=ExtResource("1_l7lh6")]
 layout_mode = 0
-offset_left = 253.0
-offset_top = 347.0
-offset_right = 1647.0
-offset_bottom = 458.0
+offset_left = 99.0
+offset_top = 363.0
+offset_right = 1701.0
+offset_bottom = 474.0
+theme_override_font_sizes/font_size = 30
 text = "Déconnecter le robot et retourner au poste de commande
 "
 

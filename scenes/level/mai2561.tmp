@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cjb71n2md4a51"]
+[gd_scene load_steps=17 format=3 uid="uid://cjb71n2md4a51"]
 
 [ext_resource type="PackedScene" uid="uid://yr2rkrvl6msr" path="res://scenes/misc/game_manager.tscn" id="1_0vmmp"]
 [ext_resource type="PackedScene" uid="uid://lrbobe03y04y" path="res://scenes/misc/camera/ScreenCamera.tscn" id="1_fv07i"]
@@ -16,8 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://weq3rc784pck" path="res://scenes/level/moon/moon_tableau_A1.tscn" id="11_jyqiv"]
 [ext_resource type="PackedScene" uid="uid://blullxtmxkqun" path="res://scenes/level/moon/moon_tableau_B1.tscn" id="12_ic2kj"]
 [ext_resource type="Texture2D" uid="uid://ciisxx320geok" path="res://assets/sprites/moon_bckg.png" id="13_6qdsk"]
-[ext_resource type="PackedScene" uid="uid://07ktkj0xxlhw" path="res://scenes/misc/collectibles/wrench.tscn" id="15_u7hj4"]
-[ext_resource type="PackedScene" uid="uid://c20pftwnjf0xs" path="res://scenes/misc/collectibles/stone.tscn" id="16_4ilak"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -29,8 +27,9 @@ player_path = NodePath("../Player")
 camera_path = NodePath("../ScreenCamera")
 ui = NodePath("../UI")
 
-[node name="MapFactory" parent="." instance=ExtResource("5_b16af")]
+[node name="Map" parent="." instance=ExtResource("5_b16af")]
 unique_name_in_owner = true
+portal = ExtResource("5_dxvwj")
 desert_A = Array[PackedScene]([ExtResource("6_y4dkv")])
 desert_B = Array[PackedScene]([ExtResource("6_xwrpb")])
 desert_background = ExtResource("7_2abwr")
@@ -40,13 +39,31 @@ ice_background = ExtResource("10_dntjg")
 moon_A = Array[PackedScene]([ExtResource("11_jyqiv")])
 moon_B = Array[PackedScene]([ExtResource("12_ic2kj")])
 moon_background = ExtResource("13_6qdsk")
-portal = ExtResource("5_dxvwj")
-wrench = ExtResource("15_u7hj4")
-portalite = ExtResource("16_4ilak")
 
 [node name="Player" parent="." instance=ExtResource("2_gtig1")]
 position = Vector2(944, 490)
 scale = Vector2(0.5, 0.5)
+default_max_speed = null
+default_acceleration = null
+default_turning_acceleration = null
+default_deceleration = null
+default_gravity_acceleration = null
+default_gravity_max = null
+default_jump_force = null
+default_jump_cut = null
+default_jump_gravity_max = null
+default_jump_hang_treshold = null
+default_jump_hang_gravity_mult = null
+jump_coyote = null
+jump_buffer = null
+iced_max_speed = null
+iced_deceleration = null
+iced_turning_acceleration = null
+moon_max_speed = null
+moon_deceleration = null
+moon_turning_acceleration = null
+moon_gravity_acceleration = null
+oxygenReserve = null
 
 [node name="ScreenCamera" parent="." instance=ExtResource("1_fv07i")]
 position = Vector2(944, 490)
