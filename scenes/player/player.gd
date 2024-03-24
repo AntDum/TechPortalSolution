@@ -9,6 +9,7 @@ extends CharacterBody2D
 ## https://www.youtube.com/watch?v=2S3g8CgBG1g
 ## Except for separate air and ground acceleration, as I don't think it's necessary.
 
+signal dead
 
 # BASIC MOVEMENT VARAIABLES ---------------- #
 var face_direction := 1
@@ -52,6 +53,7 @@ var jump_coyote_timer : float = 0
 var jump_buffer_timer : float = 0
 var is_jumping := false
 # ----------------------------------- #
+
 
 @onready var left_ray = $RayCast2DLeft
 @onready var right_ray = $RayCast2DRight
@@ -129,6 +131,7 @@ func set_direction(hor_direction) -> void:
 		return
 	apply_scale(Vector2(hor_direction * face_direction, 1)) # flip
 	face_direction = hor_direction # remember direction
+
  
 
 func jump_logic(_delta: float) -> void:
@@ -193,3 +196,8 @@ func timers(delta: float) -> void:
 	jump_coyote_timer -= delta
 	jump_buffer_timer -= delta
 
+
+
+func _on_area_2d_body_entered(body):
+	dead.emit()
+	queue_free()
