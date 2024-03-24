@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://bxtt1oos8ligu"
-path="res://.godot/imported/Violon_court.ogg-3d7b491f2acb36eee0b84f223f1fc4b0.oggvorbisstr"
+path="res://.godot/imported/Violon_court.ogg-b145b3195a5c77b4042a817ceba64477.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/sound/Music/boucle/Violon_court.ogg"
-dest_files=["res://.godot/imported/Violon_court.ogg-3d7b491f2acb36eee0b84f223f1fc4b0.oggvorbisstr"]
+source_file="res://assets/Sound/Music/boucle/Violon_court.ogg"
+dest_files=["res://.godot/imported/Violon_court.ogg-b145b3195a5c77b4042a817ceba64477.oggvorbisstr"]
 
 [params]
 

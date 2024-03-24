@@ -86,4 +86,15 @@ func _on_room_entered(biome1 : Room.Biome, biome2 : Room.Biome) -> void:
 		UI.enable_sand_storm()
 	else:
 		UI.disable_sand_storm()
-
+	if biome1 == Room.Biome.ICE || biome2 == Room.Biome.ICE:
+		print("You just entered an icy zone. Brrrrrrr")
+		print(Camera.get_children())
+		Camera.get_child(0).enable()
+	else:
+		Camera.get_child(0).disable()
+	if biome1 == Room.Biome.MOON || biome2 == Room.Biome.MOON:
+		print("You just entered an icy zone. Brrrrrrr")
+		Camera.get_child(0).enable()
+	else:
+		Camera.get_child(0).disable()
+		
