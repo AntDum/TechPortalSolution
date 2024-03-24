@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dv2wvappn7inc"
-path="res://.godot/imported/Bruit_respiration.ogg-8543ca7707c48c3b54705c4d690e5135.oggvorbisstr"
+path="res://.godot/imported/Bruit_respiration.ogg-eac846ce421009d963ba93d2af6f099f.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/Sound/Sound_effect/Game/Bruit_respiration.ogg"
-dest_files=["res://.godot/imported/Bruit_respiration.ogg-8543ca7707c48c3b54705c4d690e5135.oggvorbisstr"]
+source_file="res://assets/sound/Sound_effect/Game/Bruit_respiration.ogg"
+dest_files=["res://.godot/imported/Bruit_respiration.ogg-eac846ce421009d963ba93d2af6f099f.oggvorbisstr"]
 
 [params]
 
