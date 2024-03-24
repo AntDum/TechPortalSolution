@@ -23,7 +23,6 @@ scale = Vector2(0.5, 0.5)
 [node name="platform" parent="." instance=ExtResource("8_lta6m")]
 position = Vector2(-844, 531)
 destroyable = false
-iced = true
 
 [node name="platform2" parent="." instance=ExtResource("8_lta6m")]
 position = Vector2(-1550, 412)
@@ -36,14 +35,12 @@ position = Vector2(-1277, 220)
 
 [node name="platform5" parent="." instance=ExtResource("8_lta6m")]
 position = Vector2(64, 549)
-iced = true
 
 [node name="platform6" parent="." instance=ExtResource("8_lta6m")]
 position = Vector2(-1286, 709)
 
 [node name="platform7" parent="." instance=ExtResource("8_lta6m")]
 position = Vector2(-426, 768)
-iced = true
 
 [node name="platform8" parent="." instance=ExtResource("8_lta6m")]
 position = Vector2(-960, 952)

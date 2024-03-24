@@ -5,10 +5,11 @@ class_name Room
 #  III |  IV
 
 enum SubRoomType {
-	I,
-	II,
-	III,
-	IV,
+	I,		# 0
+	II,		# 1
+	III, 	# 2
+	IV,		# 3
+	NULL
 }
 
 enum Biome {
@@ -57,6 +58,17 @@ static func get_position_subroom(from: Vector2, sub_room_type: SubRoomType, want
 		elif wanted == SubRoomType.IV:
 			offset = Vector2(1, 1)
 	return from + offset
+
+static func reverse_subroom(sub_room_type: SubRoomType) -> SubRoomType:
+	if sub_room_type == SubRoomType.I:
+		return SubRoomType.IV
+	elif sub_room_type == SubRoomType.II:
+		return SubRoomType.III
+	elif sub_room_type == SubRoomType.III:
+		return SubRoomType.II
+	elif sub_room_type == SubRoomType.IV:
+		return SubRoomType.I
+	return SubRoomType.NULL
 
 static func get_random_biome(exclude: Room.Biome):
 	var biomes = Room.Biome.values()

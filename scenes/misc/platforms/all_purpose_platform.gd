@@ -9,8 +9,6 @@ extends Node2D
 		one_way = value
 @export var droppable := true
 @export var destroyable := true
-@export var iced := false
-
 
 # Falling
 @export_group("Falling parameters")
@@ -78,7 +76,3 @@ func _on_reset_timer_timeout():
 	# Reset the platform
 	Animator.play("RESET")
 	# Optionally, you can also reset the platform's position or other properties here
-
-
-func is_iced() -> bool:
-	return iced

@@ -4,3 +4,7 @@
 
 [node name="GenericRoom" type="Node2D"]
 script = ExtResource("1_cx3vx")
+
+[node name="Background" type="CanvasGroup" parent="."]
+
+[node name="Platforms" type="Node2D" parent="."]

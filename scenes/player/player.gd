@@ -16,37 +16,54 @@ var x_dir := 1
 
 @export_group("Basic mouvement") 
 @export var default_max_speed: float = 560
-var max_speed: float = default_max_speed
-@export var acceleration: float = 2880
+@export var default_acceleration: float = 2880
 @export var default_turning_acceleration : float = 9600
-var turning_acceleration: float = default_turning_acceleration
 @export var default_deceleration: float = 3200
+var max_speed: float = default_max_speed
+var acceleration: float = default_acceleration
+var turning_acceleration: float = default_turning_acceleration
 var deceleration: float = default_deceleration
 # ------------------------------------------ #
 
-@export_subgroup("Iced mouvement")
-@export var iced_max_speed: float = 780
-@export var iced_deceleration: float = 2
-@export var iced_turning_acceleration: float = 3200
-# ------------------------------------------ #
 
 # GRAVITY ----- #
 @export_group("Gravity") 
-@export var gravity_acceleration : float = 3840
-@export var gravity_max : float = 1020
+@export var default_gravity_acceleration : float = 3840
+@export var default_gravity_max : float = 1020
+var gravity_acceleration : float = default_gravity_acceleration
+var gravity_max : float = default_gravity_max
 # ------------- #
 
 # JUMP VARAIABLES ------------------- #
 @export_group("Jump") 
-@export var jump_force : float = 1400
-@export var jump_cut : float = 0.25
-@export var jump_gravity_max : float = 500
-@export var jump_hang_treshold : float = 2.0
-@export var jump_hang_gravity_mult : float = 0.1
+@export var default_jump_force : float = 1400
+@export var default_jump_cut : float = 0.25
+@export var default_jump_gravity_max : float = 500
+@export var default_jump_hang_treshold : float = 2.0
+@export var default_jump_hang_gravity_mult : float = 0.1
+var jump_force : float = default_jump_force
+var jump_cut : float = default_jump_cut
+var jump_gravity_max : float = default_jump_gravity_max
+var jump_hang_treshold : float = default_jump_hang_treshold
+var jump_hang_gravity_mult : float = default_jump_hang_gravity_mult
 # Timers
 @export_subgroup("Timer") 
 @export var jump_coyote : float = 0.08
 @export var jump_buffer : float = 0.1
+
+
+# ------------------------------------------ #
+@export_group("Map effects")
+@export_subgroup("Iced mouvement")
+@export var iced_max_speed: float = 780
+@export var iced_deceleration: float = 2
+@export var iced_turning_acceleration: float = 3200
+
+@export_subgroup("Moon mouvement")
+@export var moon_max_speed: float = 780
+@export var moon_deceleration: float = 2
+@export var moon_turning_acceleration: float = 3200
+@export var moon_gravity_acceleration : float = 3840
 
 var jump_coyote_timer : float = 0
 var jump_buffer_timer : float = 0
@@ -87,14 +104,17 @@ func platform_collide() -> void:
 			
 		if collision.has_method("drop") and Input.is_action_pressed("down"):
 			collision.drop()
-		
-		if collision.has_method("is_iced"):
-			if collision.is_iced():
-				max_speed = iced_max_speed
-				deceleration = iced_deceleration
+
+
+func put_on_ice(on: bool) -> void:
+	if on:
+		max_speed = iced_max_speed
+		deceleration = iced_deceleration
+		turning_acceleration = iced_turning_acceleration
 	else:
 		max_speed = default_max_speed
 		deceleration = default_deceleration
+		turning_acceleration = default_turning_acceleration
 	
 
 func x_movement(delta: float) -> void:
@@ -129,7 +149,7 @@ func set_direction(hor_direction) -> void:
 		return
 	apply_scale(Vector2(hor_direction * face_direction, 1)) # flip
 	face_direction = hor_direction # remember direction
- 
+
 
 func jump_logic(_delta: float) -> void:
 	# Reset our jump requirements
@@ -193,3 +213,9 @@ func timers(delta: float) -> void:
 	jump_coyote_timer -= delta
 	jump_buffer_timer -= delta
 
+
+func _on_room_entered(biome1 : Room.Biome, biome2 : Room.Biome) -> void:
+	if biome1 == Room.Biome.ICE || biome2 == Room.Biome.ICE:
+		put_on_ice(true)
+	else:
+		put_on_ice(false)
