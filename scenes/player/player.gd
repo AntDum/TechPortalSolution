@@ -231,8 +231,7 @@ func _on_room_entered(biome1 : Room.Biome, biome2 : Room.Biome) -> void:
 		put_on_ice(false)
 
 func _on_area_2d_body_entered(_body):
-	dead.emit()
-	queue_free()
+	get_killed()
 	
 	
 func suffocate():
@@ -255,4 +254,6 @@ func breathe():
 
 func get_killed():
 	print("YOU JUST DIEEEEED")
-	emit_signal("dead")
+	dead.emit()
+	queue_free()
+
