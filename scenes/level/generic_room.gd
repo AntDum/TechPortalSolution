@@ -101,6 +101,15 @@ func place_rooms(pos: Vector2, biome: Room.Biome, ignore: Room.SubRoomType, firs
 				continue
 			
 			var room = room_packed.instantiate()
+			if(sub_type == Room.SubRoomType.I):
+				room.openGatesDR()
+			if(sub_type == Room.SubRoomType.II):
+				room.openGatesDL()
+			if(sub_type == Room.SubRoomType.III):
+				room.openGatesUL()
+			if(sub_type == Room.SubRoomType.IV):
+				room.openGatesUR()
+				
 			room.position = new_pos * screen_size
 			platform_child.add_child(room)
 			print("Placed room at ", new_pos, " ignore ", ignore, " in biome ", biome, " type ", sub_type)
@@ -150,3 +159,4 @@ func place_rooms(pos: Vector2, biome: Room.Biome, ignore: Room.SubRoomType, firs
 					portal_instance.sub_room_type = sub_type
 					portal_instance.room_pos = new_pos
 					portal_instance.connect("portal_activated", game_manager.portal_entered)
+					portal_instance.connect("portal_activated", room.openAllGates)

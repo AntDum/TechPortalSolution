@@ -1,0 +1,100 @@
+[gd_scene load_steps=5 format=3 uid="uid://0oowrmkidxkv"]
+
+[ext_resource type="Script" path="res://scenes/level/desert/tableau_b.gd" id="1_c8bu7"]
+[ext_resource type="PackedScene" uid="uid://dd6efprmtm4k3" path="res://scenes/level/ice/ice_tableau_B.tscn" id="2_us8vu"]
+[ext_resource type="PackedScene" uid="uid://doegwdd83n18g" path="res://scenes/misc/platforms/all_purpose_platform.tscn" id="3_870ej"]
+[ext_resource type="Texture2D" uid="uid://bjy7qehrsv8d2" path="res://assets/sprites/ice_platform.png" id="4_gyjx6"]
+
+[node name="tableau_b_1" type="Node2D"]
+script = ExtResource("1_c8bu7")
+
+[node name="TableauB" parent="." instance=ExtResource("2_us8vu")]
+
+[node name="platform" parent="." instance=ExtResource("3_870ej")]
+position = Vector2(1669, 649)
+scale = Vector2(0.2, 1)
+
+[node name="Sprite2D" parent="platform" index="0"]
+texture = ExtResource("4_gyjx6")
+
+[node name="platform8" parent="." instance=ExtResource("3_870ej")]
+position = Vector2(1489, 859)
+scale = Vector2(0.2, 1)
+
+[node name="Sprite2D" parent="platform8" index="0"]
+texture = ExtResource("4_gyjx6")
+
+[node name="platform9" parent="." instance=ExtResource("3_870ej")]
+position = Vector2(1236, 721)
+scale = Vector2(0.2, 1)
+
+[node name="Sprite2D" parent="platform9" index="0"]
+texture = ExtResource("4_gyjx6")
+
+[node name="platform2" parent="." instance=ExtResource("3_870ej")]
+position = Vector2(699, 613)
+scale = Vector2(0.2, 1)
+
+[node name="Sprite2D" parent="platform2" index="0"]
+texture = ExtResource("4_gyjx6")
+
+[node name="platform10" parent="." instance=ExtResource("3_870ej")]
+position = Vector2(558, 784)
+scale = Vector2(0.2, 1)
+
+[node name="Sprite2D" parent="platform10" index="0"]
+texture = ExtResource("4_gyjx6")
+
+[node name="platform11" parent="." instance=ExtResource("3_870ej")]
+position = Vector2(395, 964)
+scale = Vector2(0.2, 1)
+
+[node name="Sprite2D" parent="platform11" index="0"]
+texture = ExtResource("4_gyjx6")
+
+[node name="platform3" parent="." instance=ExtResource("3_870ej")]
+position = Vector2(527, 534)
+scale = Vector2(0.2, 1)
+
+[node name="Sprite2D" parent="platform3" index="0"]
+texture = ExtResource("4_gyjx6")
+
+[node name="platform4" parent="." instance=ExtResource("3_870ej")]
+position = Vector2(642, 365)
+scale = Vector2(0.2, 1)
+
+[node name="Sprite2D" parent="platform4" index="0"]
+texture = ExtResource("4_gyjx6")
+
+[node name="platform5" parent="." instance=ExtResource("3_870ej")]
+position = Vector2(441, 280)
+scale = Vector2(0.2, 1)
+
+[node name="Sprite2D" parent="platform5" index="0"]
+texture = ExtResource("4_gyjx6")
+
+[node name="platform6" parent="." instance=ExtResource("3_870ej")]
+position = Vector2(1681, 202)
+scale = Vector2(0.2, 1)
+
+[node name="Sprite2D" parent="platform6" index="0"]
+texture = ExtResource("4_gyjx6")
+
+[node name="platform7" parent="." instance=ExtResource("3_870ej")]
+position = Vector2(1807, 419)
+scale = Vector2(0.2, 1)
+
+[node name="Sprite2D" parent="platform7" index="0"]
+texture = ExtResource("4_gyjx6")
+
+[editable path="platform"]
+[editable path="platform8"]
+[editable path="platform9"]
+[editable path="platform2"]
+[editable path="platform10"]
+[editable path="platform11"]
+[editable path="platform3"]
+[editable path="platform4"]
+[editable path="platform5"]
+[editable path="platform6"]
+[editable path="platform7"]

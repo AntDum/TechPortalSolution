@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cevavnfoulchd"]
+[gd_scene load_steps=4 format=3 uid="uid://cevavnfoulchd"]
 
 [ext_resource type="Texture2D" uid="uid://clo0bu57vsskd" path="res://assets/sprites/desert_bckg.png" id="1_4xby1"]
+[ext_resource type="Script" path="res://scenes/level/desert/tableauB.gd" id="1_64p7a"]
 [ext_resource type="TileSet" uid="uid://df1n4a4p0mboe" path="res://assets/tilemaps/desert_tilemap.tres" id="2_nl2ek"]
 
 [node name="DesertTableauA2" type="Node2D"]
+script = ExtResource("1_64p7a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
@@ -19,3 +21,15 @@ layer_0/tile_data = PackedInt32Array(2293760, 65536, 2, 2228224, 131072, 0, 2228
 
 [node name="Marker2D" type="Marker2D" parent="." groups=["Portail_point"]]
 position = Vector2(932, 494)
+
+[node name="GatesDL" type="TileMap" parent="."]
+scale = Vector2(0.429, 0.429)
+tile_set = ExtResource("2_nl2ek")
+format = 2
+layer_0/tile_data = PackedInt32Array(327681, 65536, 1, 262145, 65536, 6, 196609, 65536, 6, 131073, 327680, 0, 131072, 131072, 4, 196608, 131072, 0, 262144, 131072, 0, 327680, 65536, 2, 2293766, 65536, 2, 2293767, 0, 5, 2293768, 0, 5, 2293769, 65536, 1, 2228233, 327680, 0, 2228232, 262144, 2, 2228231, 262144, 2, 2228230, 131072, 4)
+
+[node name="GatesUR" type="TileMap" parent="."]
+scale = Vector2(0.429, 0.429)
+tile_set = ExtResource("2_nl2ek")
+format = 2
+layer_0/tile_data = PackedInt32Array(1966143, 65536, 1, 1900607, 65536, 6, 1835071, 65536, 6, 1769535, 327680, 0, 1769534, 131072, 4, 1835070, 131072, 0, 1900606, 131072, 0, 1966142, 65536, 2, 65593, 65536, 1, 65592, 0, 5, 65591, 0, 5, 65590, 65536, 2, 55, 262144, 2, 56, 262144, 2, 57, 327680, 0, 54, 131072, 4)

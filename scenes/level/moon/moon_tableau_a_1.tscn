@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvfpna1lxf265"]
+
+[ext_resource type="Script" path="res://scenes/level/desert/tableau_a.gd" id="1_vo74j"]
+[ext_resource type="PackedScene" uid="uid://weq3rc784pck" path="res://scenes/level/moon/moon_tableau_A.tscn" id="2_t7d07"]
+[ext_resource type="PackedScene" uid="uid://doegwdd83n18g" path="res://scenes/misc/platforms/all_purpose_platform.tscn" id="3_h71se"]
+[ext_resource type="Texture2D" uid="uid://3e81wohuay5w" path="res://assets/sprites/moon_platform.png" id="4_eglkm"]
+
+[node name="moon_tableau_a1" type="Node2D"]
+script = ExtResource("1_vo74j")
+
+[node name="TableauA" parent="." instance=ExtResource("2_t7d07")]
+
+[node name="platform" parent="." instance=ExtResource("3_h71se")]
+position = Vector2(493, 770)
+scale = Vector2(0.3, 1)
+destroyable = false
+
+[node name="Sprite2D" parent="platform" index="0"]
+texture = ExtResource("4_eglkm")
+
+[node name="platform2" parent="." instance=ExtResource("3_h71se")]
+position = Vector2(1574, 282)
+scale = Vector2(0.3, 1)
+destroyable = false
+
+[node name="Sprite2D" parent="platform2" index="0"]
+texture = ExtResource("4_eglkm")
+
+[node name="platform3" parent="." instance=ExtResource("3_h71se")]
+position = Vector2(225, 247)
+scale = Vector2(0.3, 1)
+destroyable = false
+
+[node name="Sprite2D" parent="platform3" index="0"]
+texture = ExtResource("4_eglkm")
+
+[node name="platform4" parent="." instance=ExtResource("3_h71se")]
+position = Vector2(1215, 788)
+scale = Vector2(0.3, 1)
+destroyable = false
+
+[node name="Sprite2D" parent="platform4" index="0"]
+texture = ExtResource("4_eglkm")
+
+[node name="platform5" parent="." instance=ExtResource("3_h71se")]
+position = Vector2(1585, 560)
+scale = Vector2(0.3, 1)
+destroyable = false
+
+[node name="Sprite2D" parent="platform5" index="0"]
+texture = ExtResource("4_eglkm")
+
+[node name="platform6" parent="." instance=ExtResource("3_h71se")]
+position = Vector2(232, 544)
+scale = Vector2(0.3, 1)
+destroyable = false
+
+[node name="Sprite2D" parent="platform6" index="0"]
+texture = ExtResource("4_eglkm")
+
+[node name="platform7" parent="." instance=ExtResource("3_h71se")]
+position = Vector2(1683, 972)
+scale = Vector2(0.3, 1)
+destroyable = false
+
+[node name="Sprite2D" parent="platform7" index="0"]
+texture = ExtResource("4_eglkm")
+
+[editable path="platform"]
+[editable path="platform2"]
+[editable path="platform3"]
+[editable path="platform4"]
+[editable path="platform5"]
+[editable path="platform6"]
+[editable path="platform7"]

@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://ciisxx320geok" path="res://assets/sprites/moon_bckg.png" id="1_dufwt"]
 [ext_resource type="PackedScene" uid="uid://c8cmypufl6l32" path="res://scenes/player/player.tscn" id="2_ogh6f"]
 [ext_resource type="PackedScene" uid="uid://lrbobe03y04y" path="res://scenes/misc/camera/ScreenCamera.tscn" id="3_7rrbj"]
-[ext_resource type="PackedScene" uid="uid://weq3rc784pck" path="res://scenes/level/moon/moon_tableau_A1.tscn" id="4_c6rgl"]
-[ext_resource type="PackedScene" uid="uid://blullxtmxkqun" path="res://scenes/level/moon/moon_tableau_B1.tscn" id="5_g2n2f"]
+[ext_resource type="PackedScene" uid="uid://weq3rc784pck" path="res://scenes/level/moon/moon_tableau_A.tscn" id="4_c6rgl"]
+[ext_resource type="PackedScene" uid="uid://blullxtmxkqun" path="res://scenes/level/moon/moon_tableau_B.tscn" id="5_g2n2f"]
 
 [node name="IceRoom" type="Node2D"]
 

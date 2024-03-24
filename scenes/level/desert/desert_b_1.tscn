@@ -1,33 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://dntpatuqgudc2"]
+[gd_scene load_steps=4 format=3 uid="uid://dntpatuqgudc2"]
 
+[ext_resource type="Script" path="res://scenes/level/desert/tableau_b.gd" id="1_14b42"]
 [ext_resource type="PackedScene" uid="uid://cevavnfoulchd" path="res://scenes/level/desert/desert_tableau_B.tscn" id="1_dlmjh"]
 [ext_resource type="PackedScene" uid="uid://doegwdd83n18g" path="res://scenes/misc/platforms/all_purpose_platform.tscn" id="2_w7a6g"]
 
 [node name="desert_B1" type="Node2D"]
+script = ExtResource("1_14b42")
 
-[node name="DesertTableauA2" parent="." instance=ExtResource("1_dlmjh")]
+[node name="TableauB" parent="." instance=ExtResource("1_dlmjh")]
 
-[node name="platform" parent="DesertTableauA2" instance=ExtResource("2_w7a6g")]
+[node name="platform" parent="TableauB" instance=ExtResource("2_w7a6g")]
 position = Vector2(1428, 246)
 
-[node name="platform2" parent="DesertTableauA2" instance=ExtResource("2_w7a6g")]
+[node name="platform2" parent="TableauB" instance=ExtResource("2_w7a6g")]
 position = Vector2(483, 886)
 scale = Vector2(0.3, 1)
 
-[node name="platform6" parent="DesertTableauA2" instance=ExtResource("2_w7a6g")]
+[node name="platform6" parent="TableauB" instance=ExtResource("2_w7a6g")]
 position = Vector2(708, 741)
 scale = Vector2(0.3, 1)
 
-[node name="platform7" parent="DesertTableauA2" instance=ExtResource("2_w7a6g")]
+[node name="platform7" parent="TableauB" instance=ExtResource("2_w7a6g")]
 position = Vector2(419, 312)
 scale = Vector2(0.3, 1)
 
-[node name="platform3" parent="DesertTableauA2" instance=ExtResource("2_w7a6g")]
+[node name="platform3" parent="TableauB" instance=ExtResource("2_w7a6g")]
 position = Vector2(934, 345)
 
-[node name="platform4" parent="DesertTableauA2" instance=ExtResource("2_w7a6g")]
-position = Vector2(1387, 775)
+[node name="platform4" parent="TableauB" instance=ExtResource("2_w7a6g")]
+position = Vector2(1195, 697)
 scale = Vector2(0.3, 1)
 
-[node name="platform5" parent="DesertTableauA2" instance=ExtResource("2_w7a6g")]
+[node name="platform8" parent="TableauB" instance=ExtResource("2_w7a6g")]
+position = Vector2(1404, 892)
+scale = Vector2(0.3, 1)
+
+[node name="platform5" parent="TableauB" instance=ExtResource("2_w7a6g")]
 position = Vector2(1572, 133)

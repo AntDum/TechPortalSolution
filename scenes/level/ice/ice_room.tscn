@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://ceux88er78fjt"]
 
 [ext_resource type="Texture2D" uid="uid://droi3tj3frgi1" path="res://assets/sprites/ice_bckg.png" id="1_lnv7g"]
-[ext_resource type="PackedScene" uid="uid://hkp7nhy2x4wa" path="res://scenes/level/ice/ice_tableau_A1.tscn" id="3_junty"]
+[ext_resource type="PackedScene" uid="uid://hkp7nhy2x4wa" path="res://scenes/level/ice/ice_tableau_A.tscn" id="3_junty"]
 [ext_resource type="PackedScene" uid="uid://c8cmypufl6l32" path="res://scenes/player/player.tscn" id="3_u31vu"]
-[ext_resource type="PackedScene" uid="uid://dd6efprmtm4k3" path="res://scenes/level/ice/ice_tableau_B1.tscn" id="4_eyit7"]
+[ext_resource type="PackedScene" uid="uid://dd6efprmtm4k3" path="res://scenes/level/ice/ice_tableau_B.tscn" id="4_eyit7"]
 [ext_resource type="PackedScene" uid="uid://lrbobe03y04y" path="res://scenes/misc/camera/ScreenCamera.tscn" id="4_k4j7m"]
 
 [node name="IceRoom" type="Node2D"]

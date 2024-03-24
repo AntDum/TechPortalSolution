@@ -1,19 +1,19 @@
 [gd_scene load_steps=5 format=3 uid="uid://btd1c463d616a"]
 
 [ext_resource type="PackedScene" uid="uid://bb638ymigeclx" path="res://scenes/level/desert/desert_tableau_A.tscn" id="1_073we"]
-[ext_resource type="Script" path="res://scenes/level/desert/desert_a_1.gd" id="1_ocrav"]
+[ext_resource type="Script" path="res://scenes/level/desert/tableau_a.gd" id="1_dldsc"]
 [ext_resource type="TileSet" uid="uid://df1n4a4p0mboe" path="res://assets/tilemaps/desert_tilemap.tres" id="1_rk5du"]
 [ext_resource type="PackedScene" uid="uid://doegwdd83n18g" path="res://scenes/misc/platforms/all_purpose_platform.tscn" id="2_5bq8n"]
 
 [node name="desert_A1" type="Node2D"]
-script = ExtResource("1_ocrav")
+script = ExtResource("1_dldsc")
 
 [node name="TileMap2" type="TileMap" parent="."]
 scale = Vector2(0.5, 0.5)
 tile_set = ExtResource("1_rk5du")
 format = 2
 
-[node name="DesertTableauA1" parent="." instance=ExtResource("1_073we")]
+[node name="TableauA" parent="." instance=ExtResource("1_073we")]
 
 [node name="platform" parent="." instance=ExtResource("2_5bq8n")]
 position = Vector2(1374, 635)
