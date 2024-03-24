@@ -2,6 +2,7 @@ extends AudioStreamPlayer
 
 
 const menu_music = preload("res://assets/Sound/Music/Portal_main_theme.ogg")
+const win_music = preload("res://assets/Sound/Music/cara_mia.ogg")
 enum music {MENU, GAME, WIN, NONE}
 var music_playing = music.NONE
 
@@ -36,18 +37,26 @@ func play_music_menu():
 	music_playing = music.MENU
 	_play_music(menu_music)
 
+func play_win_music():
+	music_playing = music.WIN
+	_play_music(win_music)
+
 func stop_music():
 	if music_playing == music.MENU:
 		print("stop menu music")
 		sound_animator.play("menu_ease")
 		stop()
-		
+	
+	if music_playing == music.WIN:
+		print("stop win music")
+		sound_animator.play("menu_ease")
+		stop()
+	
 	if music_playing == music.GAME:
 		print("stop game music")
 		sound_animator.play("game_ease")
 		
 	music_playing = music.NONE
-	#sound_animator.play("RESET")
 	
 func stop_music_menu():
 	#For backward compatibility

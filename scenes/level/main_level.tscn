@@ -1,10 +1,10 @@
 [gd_scene load_steps=19 format=3 uid="uid://cjb71n2md4a51"]
 
-[ext_resource type="PackedScene" uid="uid://3kcjsi1jm30s" path="res://scenes/misc/game_manager.tscn" id="1_0vmmp"]
+[ext_resource type="PackedScene" uid="uid://yr2rkrvl6msr" path="res://scenes/misc/game_manager.tscn" id="1_0vmmp"]
 [ext_resource type="PackedScene" uid="uid://lrbobe03y04y" path="res://scenes/misc/camera/ScreenCamera.tscn" id="1_fv07i"]
 [ext_resource type="PackedScene" uid="uid://c8cmypufl6l32" path="res://scenes/player/player.tscn" id="2_gtig1"]
 [ext_resource type="PackedScene" uid="uid://dsifojcl8orq0" path="res://scenes/env/ice_spikes_generator.tscn" id="2_xxsbs"]
-[ext_resource type="PackedScene" uid="uid://byrlhr2clp63q" path="res://scenes/ui/ui.tscn" id="3_itilc"]
+[ext_resource type="PackedScene" uid="uid://byrlhr2clp63q" path="res://scenes/UI/ui.tscn" id="3_itilc"]
 [ext_resource type="PackedScene" uid="uid://cl8rr2b7tanrp" path="res://scenes/level/generic_room.tscn" id="5_b16af"]
 [ext_resource type="PackedScene" uid="uid://cjxssm6snqvk6" path="res://scenes/misc/portal/portal.tscn" id="5_dxvwj"]
 [ext_resource type="PackedScene" uid="uid://cevavnfoulchd" path="res://scenes/level/desert/desert_tableau_B1.tscn" id="6_xwrpb"]
