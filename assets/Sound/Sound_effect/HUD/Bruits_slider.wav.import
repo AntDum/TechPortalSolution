@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c2ykpveepqwiw"
-path="res://.godot/imported/Bruits_slider.wav-3bcfb37330d6ecc94f44862a43153976.sample"
+path="res://.godot/imported/Bruits_slider.wav-c6c4104cf584c86d2fa29cabe5515cca.sample"
 
 [deps]
 
-source_file="res://assets/Sound/Sound_effect/HUD/Bruits_slider.wav"
-dest_files=["res://.godot/imported/Bruits_slider.wav-3bcfb37330d6ecc94f44862a43153976.sample"]
+source_file="res://assets/sound/Sound_effect/HUD/Bruits_slider.wav"
+dest_files=["res://.godot/imported/Bruits_slider.wav-c6c4104cf584c86d2fa29cabe5515cca.sample"]
 
 [params]
 

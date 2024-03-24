@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dy1qlrdn8kada"]
+[gd_scene load_steps=5 format=3 uid="uid://dy1qlrdn8kada"]
 
 [ext_resource type="PackedScene" uid="uid://bb638ymigeclx" path="res://scenes/level/desert/desert_tableau_A1.tscn" id="1_2vnve"]
 [ext_resource type="PackedScene" uid="uid://cevavnfoulchd" path="res://scenes/level/desert/desert_tableau_B1.tscn" id="2_8m4ta"]
 [ext_resource type="PackedScene" uid="uid://c8cmypufl6l32" path="res://scenes/player/player.tscn" id="3_qo1os"]
 [ext_resource type="PackedScene" uid="uid://lrbobe03y04y" path="res://scenes/misc/camera/ScreenCamera.tscn" id="4_icnv0"]
-[ext_resource type="PackedScene" uid="uid://c3hmysrpt8udg" path="res://scenes/ui/ui.tscn" id="5_pgxb7"]
 
 [node name="DesertRoom" type="Node2D"]
 

@@ -1,13 +1,6 @@
 extends CanvasLayer
 
-@export var storm_enable := true:
-	get:
-		return storm_enable
-	set(value):
-		if value:
-			enable_sand_storm()
-		else:
-			disable_sand_storm()
+@export var storm_enable := true
 	
 @onready var sand_storm = $sand_storm
 

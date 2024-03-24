@@ -14,7 +14,7 @@ enum SubRoomType {
 enum Biome {
 	DESERT,
 	ICE,
-	LUNE,
+	MOON,
 	NULL
 }
 
@@ -61,8 +61,9 @@ static func get_position_subroom(from: Vector2, sub_room_type: SubRoomType, want
 static func get_random_biome(exclude: Room.Biome):
 	var biomes = Room.Biome.values()
 	biomes.erase(exclude)
+	if exclude != Biome.NULL:
+		biomes.erase(Biome.NULL)
 	return biomes[randi() % biomes.size()]
-
 
 
 static func test_get_position_subroom():

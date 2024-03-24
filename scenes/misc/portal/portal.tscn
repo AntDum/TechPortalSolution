@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjxssm6snqvk6"]
+[gd_scene load_steps=7 format=3 uid="uid://cjxssm6snqvk6"]
 
 [ext_resource type="PackedScene" uid="uid://shswww7ahx4w" path="res://scenes/misc/collectibles/collectible.tscn" id="1_iyr22"]
+[ext_resource type="Script" path="res://scenes/misc/portal/portal.gd" id="2_nyjb7"]
+[ext_resource type="Texture2D" uid="uid://dhtbqu1trn3d0" path="res://icon.svg" id="2_o5d81"]
 
 [sub_resource type="Animation" id="Animation_4dtkb"]
 resource_name = "portal_open"
@@ -15,8 +17,15 @@ _data = {
 }
 
 [node name="collectible" instance=ExtResource("1_iyr22")]
+position = Vector2(3, -1)
+script = ExtResource("2_nyjb7")
 
 [node name="AnimationPlayer" parent="." index="1"]
 libraries = {
 "": SubResource("AnimationLibrary_eatyw")
 }
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="2"]
+texture = ExtResource("2_o5d81")
+
+[connection signal="collected" from="." to="." method="_on_collected"]
