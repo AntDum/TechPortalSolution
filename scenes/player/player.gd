@@ -157,7 +157,7 @@ func set_direction(hor_direction) -> void:
 	# To animate, only scale the sprite
 	if hor_direction == 0:
 		return
-	apply_scale(Vector2(hor_direction * face_direction, 1)) # flip
+	#apply_scale(Vector2(hor_direction * face_direction, 1)) # flip
 	face_direction = hor_direction # remember direction
 
 

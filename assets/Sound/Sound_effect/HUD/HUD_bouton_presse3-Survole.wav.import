@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b1wk07rjhgqb5"
-path="res://.godot/imported/HUD_bouton_presse3-Survole.wav-213527dd6d08be01f4d5c8587e7e5222.sample"
+path="res://.godot/imported/HUD_bouton_presse3-Survole.wav-e4b806013e4ef951a432439e51f8bf85.sample"
 
 [deps]
 
-source_file="res://assets/Sound/Sound_effect/HUD/HUD_bouton_presse3-Survole.wav"
-dest_files=["res://.godot/imported/HUD_bouton_presse3-Survole.wav-213527dd6d08be01f4d5c8587e7e5222.sample"]
+source_file="res://assets/sound/Sound_effect/HUD/HUD_bouton_presse3-Survole.wav"
+dest_files=["res://.godot/imported/HUD_bouton_presse3-Survole.wav-e4b806013e4ef951a432439e51f8bf85.sample"]
 
 [params]
 
