@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://btb5plxi4j27o"]
+
+[ext_resource type="Script" path="res://scenes/level/desert/tableau_b.gd" id="1_31f6a"]
+[ext_resource type="PackedScene" uid="uid://blullxtmxkqun" path="res://scenes/level/moon/moon_tableau_B.tscn" id="2_ju5nr"]
+[ext_resource type="PackedScene" uid="uid://doegwdd83n18g" path="res://scenes/misc/platforms/all_purpose_platform.tscn" id="3_kkau2"]
+[ext_resource type="Texture2D" uid="uid://3e81wohuay5w" path="res://assets/sprites/moon_platform.png" id="4_1kyoc"]
+
+[node name="moon_tableau_b_1" type="Node2D"]
+script = ExtResource("1_31f6a")
+
+[node name="TableauB" parent="." instance=ExtResource("2_ju5nr")]
+
+[node name="platform" parent="." instance=ExtResource("3_kkau2")]
+position = Vector2(489, 444)
+scale = Vector2(0.1, 1)
+destroyable = false
+
+[node name="Sprite2D" parent="platform" index="0"]
+texture = ExtResource("4_1kyoc")
+
+[node name="platform2" parent="." instance=ExtResource("3_kkau2")]
+position = Vector2(1399, 811)
+scale = Vector2(0.1, 1)
+destroyable = false
+
+[node name="Sprite2D" parent="platform2" index="0"]
+texture = ExtResource("4_1kyoc")
+
+[node name="platform3" parent="." instance=ExtResource("3_kkau2")]
+position = Vector2(1772, 515)
+scale = Vector2(0.1, 1)
+destroyable = false
+
+[node name="Sprite2D" parent="platform3" index="0"]
+texture = ExtResource("4_1kyoc")
+
+[node name="platform4" parent="." instance=ExtResource("3_kkau2")]
+position = Vector2(1688, 188)
+scale = Vector2(0.1, 1)
+destroyable = false
+
+[node name="Sprite2D" parent="platform4" index="0"]
+texture = ExtResource("4_1kyoc")
+
+[node name="platform5" parent="." instance=ExtResource("3_kkau2")]
+position = Vector2(405, 927)
+scale = Vector2(0.1, 1)
+destroyable = false
+
+[node name="Sprite2D" parent="platform5" index="0"]
+texture = ExtResource("4_1kyoc")
+
+[editable path="platform"]
+[editable path="platform2"]
+[editable path="platform3"]
+[editable path="platform4"]
+[editable path="platform5"]
