@@ -2,16 +2,14 @@ extends Node
 
 signal room_entered(biome1 : Room.Biome, biome2 : Room.Biome)
 signal item_collected(item:String) #wrench or stone
+signal generator_fixed
 
 @onready var RoomMaker = %MapFactory
 
 @export_category("Parameters")
-@export var min_room_before_end := 5
-@export var max_room_before_end := 10
-
+@export var room_before_end := 5
 @export var min_before_items := 2
 
-var room_before_end := 0
 
 var room_count := 0
 
@@ -38,7 +36,6 @@ func _ready() -> void:
 	var biome = Room.get_random_biome(Room.Biome.NULL)
 	var coord := Vector2(0, 0)
 	var from_sub_type = Room.SubRoomType.IV
-	room_before_end = randi() % (max_room_before_end - min_room_before_end) + min_room_before_end
 	create_map(biome, coord, from_sub_type, true)
 	self.connect("room_entered", Player._on_room_entered)
 	self.connect("room_entered", self._on_room_entered)
@@ -120,4 +117,5 @@ func _on_wrench_collected() -> void:
 func _on_portalite_collected() -> void:
 	emit_signal("item_collected", "stone")
 	
-		
+func _on_generator_collected() -> void:
+	emit_signal("generator_fixed")

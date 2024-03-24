@@ -32,5 +32,7 @@ func _on_player_dead():
 	
 
 func _on_game_manager_item_collected(item):
-	
-	item_animator.play(item) #A corriger
+	if item == "stone":
+		item_animator.play("stone_apparition")
+	elif item == "wrench":
+		item_animator.play("wrench_apparition")
