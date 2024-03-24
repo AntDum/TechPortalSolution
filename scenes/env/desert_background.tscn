@@ -3,5 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://clo0bu57vsskd" path="res://assets/sprites/desert_bckg.png" id="1_11rnd"]
 
 [node name="desert_background" type="Sprite2D"]
+scale = Vector2(1.25833, 1.25833)
 texture = ExtResource("1_11rnd")
 centered = false

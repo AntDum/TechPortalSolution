@@ -3,5 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://ciisxx320geok" path="res://assets/sprites/moon_bckg.png" id="1_udsuw"]
 
 [node name="moon_background" type="Sprite2D"]
+scale = Vector2(1.06111, 1.06111)
 texture = ExtResource("1_udsuw")
 centered = false

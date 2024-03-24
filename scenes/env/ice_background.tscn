@@ -3,5 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://droi3tj3frgi1" path="res://assets/sprites/ice_bckg.png" id="1_k15mc"]
 
 [node name="ice_background" type="Sprite2D"]
+scale = Vector2(0.773559, 0.773559)
 texture = ExtResource("1_k15mc")
 centered = false
