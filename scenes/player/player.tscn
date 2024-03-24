@@ -171,3 +171,6 @@ bus = &"SFX"
 [node name="Land" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_q5ld2")
 bus = &"SFX"
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
