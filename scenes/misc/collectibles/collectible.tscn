@@ -1,9 +1,109 @@
-[gd_scene load_steps=3 format=3 uid="uid://shswww7ahx4w"]
+[gd_scene load_steps=7 format=3 uid="uid://shswww7ahx4w"]
 
 [ext_resource type="Script" path="res://scenes/misc/collectibles/collectible.gd" id="1_1jvc4"]
+[ext_resource type="Texture2D" uid="uid://dhtbqu1trn3d0" path="res://icon.svg" id="2_s0sbw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbduj"]
-size = Vector2(116, 137)
+size = Vector2(376, 198)
+
+[sub_resource type="Animation" id="Animation_ma0jr"]
+resource_name = "collected"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7),
+"transitions": PackedFloat32Array(0.466517, 0.267943, 2.07053),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2), Vector2(0.01, 0.01)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area2D:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Area2D:monitorable")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_xolbg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area2D:monitorable")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yb4ar"]
+_data = {
+"RESET": SubResource("Animation_xolbg"),
+"collected": SubResource("Animation_ma0jr")
+}
 
 [node name="collectible" type="Node2D"]
 script = ExtResource("1_1jvc4")
@@ -16,5 +116,11 @@ position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_gbduj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yb4ar")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_s0sbw")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

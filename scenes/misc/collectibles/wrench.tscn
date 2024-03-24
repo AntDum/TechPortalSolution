@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://07ktkj0xxlhw"]
+
+[ext_resource type="PackedScene" uid="uid://shswww7ahx4w" path="res://scenes/misc/collectibles/collectible.tscn" id="1_dj1bn"]
+[ext_resource type="Script" path="res://scenes/misc/collectibles/items.gd" id="2_c461f"]
+[ext_resource type="Texture2D" uid="uid://qnvakeik63b4" path="res://assets/sprites/wrench.png" id="2_snnil"]
+
+[node name="wrench" instance=ExtResource("1_dj1bn")]
+script = ExtResource("2_c461f")
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("2_snnil")
+
+[connection signal="collected" from="." to="." method="_on_collected"]

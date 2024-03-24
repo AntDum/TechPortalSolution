@@ -3,8 +3,20 @@ extends Node
 signal room_entered(biome1 : Room.Biome, biome2 : Room.Biome)
 signal item_collected(item:String) #wrench or stone
 
-@onready var RoomMaker = %Map
+@onready var RoomMaker = %MapFactory
 
+@export_category("Parameters")
+@export var min_room_before_end := 5
+@export var max_room_before_end := 10
+
+@export var min_before_items := 2
+
+var room_before_end := 0
+
+var room_count := 0
+
+
+@export_category("Instance")
 @export var player_path : NodePath
 @onready var Player = get_node_or_null(player_path)
 
@@ -13,6 +25,7 @@ signal item_collected(item:String) #wrench or stone
 
 @export var ui : NodePath
 @onready var UI = get_node_or_null(ui)
+
 
 var rooms : Dictionary
 
@@ -25,6 +38,7 @@ func _ready() -> void:
 	var biome = Room.get_random_biome(Room.Biome.NULL)
 	var coord := Vector2(0, 0)
 	var from_sub_type = Room.SubRoomType.IV
+	room_before_end = randi() % (max_room_before_end - min_room_before_end) + min_room_before_end
 	create_map(biome, coord, from_sub_type, true)
 	self.connect("room_entered", Player._on_room_entered)
 	self.connect("room_entered", self._on_room_entered)
@@ -36,12 +50,14 @@ func portal_entered(pos: Vector2, biome :Room.Biome, sub_room_type: Room.SubRoom
 	emit_signal("room_entered", biomes[0], biomes[1])
 
 func create_map(biome : Room.Biome, coord : Vector2, from_sub_type : Room.SubRoomType, first_map : bool) -> void:
-	
+	room_count += 1
+	var is_final = room_count >= room_before_end
+	var can_spawn_items = room_count >= min_before_items
 	var coord_i = Room.get_position_subroom(coord, from_sub_type, Room.SubRoomType.I)
 	var new_biome = Room.get_random_biome(biome)
 	print("From " + str(from_sub_type) + " to " + str(Room.SubRoomType.I) + " at " + str(coord))
 	print("Creating room at " + str(coord_i) + " with biome " + str(new_biome))
-	RoomMaker.place_room(coord_i, new_biome, Room.reverse_subroom(from_sub_type), first_map)
+	RoomMaker.place_rooms(coord_i, new_biome, Room.reverse_subroom(from_sub_type), first_map, is_final, can_spawn_items)
 
 
 func register_room(pos: Vector2, biome: Room.Biome) -> void:
@@ -87,3 +103,8 @@ func _on_room_entered(biome1 : Room.Biome, biome2 : Room.Biome) -> void:
 	else:
 		UI.disable_sand_storm()
 
+func _on_wrench_collected() -> void:
+	emit_signal("item_collected", "wrench")
+
+func _on_portalite_collected() -> void:
+	emit_signal("item_collected", "stone")

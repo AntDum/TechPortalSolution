@@ -222,6 +222,6 @@ func _on_room_entered(biome1 : Room.Biome, biome2 : Room.Biome) -> void:
 	else:
 		put_on_ice(false)
 
-func _on_area_2d_body_entered(body):
+func _on_area_2d_body_entered(_body):
 	dead.emit()
 	queue_free()

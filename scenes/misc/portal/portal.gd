@@ -9,4 +9,4 @@ var room_pos : Vector2
 
 func _on_collected():
 	emit_signal("portal_activated", room_pos, biome, sub_room_type)
-	queue_free()
+	animator.play("portal_open")
