@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl8rr2b7tanrp"]
+
+[ext_resource type="Script" path="res://scenes/level/generic_room.gd" id="1_cx3vx"]
+
+[node name="GenericRoom" type="Node2D"]
+script = ExtResource("1_cx3vx")

@@ -1,12 +1,17 @@
 extends CanvasLayer
 
+@export var storm_enable := true
+	
 @onready var sand_storm = $sand_storm
 @onready var game_over = get_node("GameOver")
 @onready var dead_fx = preload("res://assets/Sound/Sound_effect/Game/Bruit_dead.wav")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if storm_enable:
+		enable_sand_storm()
+	else:
+		disable_sand_storm()
 
 func enable_sand_storm():
 	sand_storm.visible = true
