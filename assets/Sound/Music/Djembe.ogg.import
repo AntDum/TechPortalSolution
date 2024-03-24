@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://dmt52jtsohhcv"
-path="res://.godot/imported/Djembe.ogg-ba54d03a7e5d4cadfbc4f33cfc86b1b1.oggvorbisstr"
+path="res://.godot/imported/Djembe.ogg-b494ea16651fadef0c4cdf4490198c8f.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/sound/Music/Djembe.ogg"
-dest_files=["res://.godot/imported/Djembe.ogg-ba54d03a7e5d4cadfbc4f33cfc86b1b1.oggvorbisstr"]
+source_file="res://assets/Sound/Music/Djembe.ogg"
+dest_files=["res://.godot/imported/Djembe.ogg-b494ea16651fadef0c4cdf4490198c8f.oggvorbisstr"]
 
 [params]
 
