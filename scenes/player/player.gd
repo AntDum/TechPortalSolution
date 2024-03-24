@@ -11,7 +11,7 @@ extends CharacterBody2D
 
 signal dead
 
-# BASIC MOVEMENT VARAIABLES ---------------- #
+# BASIC MOVEMENT VARIABLES ---------------- #
 var face_direction := 1
 var x_dir := 1
 
@@ -61,14 +61,20 @@ var jump_hang_gravity_mult : float = default_jump_hang_gravity_mult
 @export var iced_turning_acceleration: float = 3200
 
 @export_subgroup("Moon mouvement")
-@export var moon_max_speed: float = 780
-@export var moon_deceleration: float = 2
+@export var moon_max_speed: float = 560
+@export var moon_deceleration: float = 3200
 @export var moon_turning_acceleration: float = 3200
-@export var moon_gravity_acceleration : float = 3840
+@export var moon_gravity_acceleration : float = 3840/3
+@export var moon_oxygen_reserve : float = 30.0
+
 
 var jump_coyote_timer : float = 0
 var jump_buffer_timer : float = 0
 var is_jumping := false
+# ----------------------------------- #
+
+
+
 # ----------------------------------- #
 
 
@@ -85,6 +91,8 @@ func get_input() -> Dictionary:
 		"released_jump": Input.is_action_just_released("jump") == true
 	}
 
+func _process(delta):
+	$Label.text = String.num($OxygenCounter.time_left,2)
 
 func _physics_process(delta: float) -> void:
 	x_movement(delta)
@@ -225,3 +233,26 @@ func _on_room_entered(biome1 : Room.Biome, biome2 : Room.Biome) -> void:
 func _on_area_2d_body_entered(body):
 	dead.emit()
 	queue_free()
+	
+	
+func suffocate():
+	$Label.visible = true
+	if($OxygenCounter.is_stopped()):
+		$OxygenCounter.start(moon_oxygen_reserve)
+	max_speed = moon_max_speed
+	deceleration = moon_deceleration
+	turning_acceleration = moon_turning_acceleration
+	gravity_acceleration = moon_gravity_acceleration
+	
+func breathe():
+	$Label.visible = false
+	$OxygenCounter.stop()
+	max_speed = default_max_speed
+	deceleration = default_deceleration
+	turning_acceleration = default_turning_acceleration
+	gravity_acceleration = default_gravity_acceleration
+
+
+func get_killed():
+	print("YOU JUST DIEEEEED")
+	emit_signal("dead")
