@@ -73,7 +73,7 @@ var jump_buffer_timer : float = 0
 var is_jumping := false
 # ----------------------------------- #
 
-
+var stopped = false
 
 # ----------------------------------- #
 
@@ -90,6 +90,11 @@ func get_input() -> Dictionary:
 		"jump": Input.is_action_pressed("jump") == true,
 		"released_jump": Input.is_action_just_released("jump") == true
 	}
+
+func stop_everything() -> void:
+	stopped = true
+	breathe()
+	set_physics_process(false)
 
 func _process(delta):
 	$Label.text = String.num($OxygenCounter.time_left,2)
@@ -258,6 +263,8 @@ func breathe():
 	#AudioPlayer.stop()
 	
 func get_killed():
+	if stopped:
+		return
 	print("YOU JUST DIEEEEED")
 	dead.emit()
 	queue_free()

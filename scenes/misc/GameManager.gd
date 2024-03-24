@@ -129,3 +129,4 @@ func _on_generator_collected() -> void:
 	if ! can_repair_generator():
 		return
 	emit_signal("generator_fixed")
+	Player.stop_everything()
