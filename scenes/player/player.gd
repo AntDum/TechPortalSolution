@@ -9,6 +9,7 @@ extends CharacterBody2D
 ## https://www.youtube.com/watch?v=2S3g8CgBG1g
 ## Except for separate air and ground acceleration, as I don't think it's necessary.
 
+signal dead
 
 # BASIC MOVEMENT VARAIABLES ---------------- #
 var face_direction := 1
@@ -69,6 +70,7 @@ var jump_coyote_timer : float = 0
 var jump_buffer_timer : float = 0
 var is_jumping := false
 # ----------------------------------- #
+
 
 @onready var left_ray = $RayCast2DLeft
 @onready var right_ray = $RayCast2DRight
@@ -219,3 +221,7 @@ func _on_room_entered(biome1 : Room.Biome, biome2 : Room.Biome) -> void:
 		put_on_ice(true)
 	else:
 		put_on_ice(false)
+
+func _on_area_2d_body_entered(body):
+	dead.emit()
+	queue_free()

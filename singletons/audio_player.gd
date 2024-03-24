@@ -2,6 +2,26 @@ extends AudioStreamPlayer
 
 
 const menu_music = preload("res://assets/Sound/Music/Portal_main_theme.ogg")
+enum music {MENU, GAME, WIN, NONE}
+var music_playing = music.NONE
+
+@onready var m_voice = $Voice
+@onready var m_basse = $Basse
+@onready var m_cloche = $Cloche
+@onready var m_v_long = get_node("Violon-long")
+@onready var m_v_court = get_node("Violon-court")
+
+
+
+func _process(_delta):
+	if (music_playing == music.GAME and 
+			m_voice.finished and m_basse.finished and m_cloche.finished and m_v_court.finished and m_v_court.finished
+			):
+		#_start_game_music()
+		#print("restarting")
+		pass
+		
+			
 
 func _play_music(music: AudioStream):
 	if stream == music:
@@ -11,11 +31,27 @@ func _play_music(music: AudioStream):
 	play()
 	
 func play_music_menu():
+	music_playing = music.MENU
 	_play_music(menu_music)
 
-func stop_music_menu():
+func stop_music():
+	music_playing = music.NONE
 	stop()
 	
+func stop_music_menu():
+	#For backward compatibility
+	stop_music()
+
+func _start_game_music():
+	m_voice.play()
+	m_basse.play()
+	m_cloche.play()	
+	
+func play_game_music():
+	music_playing = music.GAME
+	_start_game_music()
+		
+
 func play_fx(stream_audio:AudioStream, bus: String = "SFX"):
 	var fx_player = AudioStreamPlayer.new()
 	fx_player.stream = stream_audio
