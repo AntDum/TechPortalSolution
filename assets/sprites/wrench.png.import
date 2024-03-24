@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c64gn8o7n21oj"
-path="res://.godot/imported/Menu_son.jpg-1011eabf1ee4674b772fc3e3fb5085ee.ctex"
+uid="uid://qnvakeik63b4"
+path="res://.godot/imported/wrench.png-3e55cff1ab6310319b996d3cec2f6034.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sound/Sound_effect/HUD/Menu_son.jpg"
-dest_files=["res://.godot/imported/Menu_son.jpg-1011eabf1ee4674b772fc3e3fb5085ee.ctex"]
+source_file="res://assets/sprites/wrench.png"
+dest_files=["res://.godot/imported/wrench.png-3e55cff1ab6310319b996d3cec2f6034.ctex"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bvoaat8ja63x2"
-path="res://.godot/imported/Bruits_approche_portail.wav-d0fe9042aa69204f7df458cfe43a5cc8.sample"
+path="res://.godot/imported/Bruits_approche_portail.wav-322190a418cd08bb21acd656e44431ac.sample"
 
 [deps]
 
-source_file="res://assets/sound/Sound_effect/Game/Bruits_approche_portail.wav"
-dest_files=["res://.godot/imported/Bruits_approche_portail.wav-d0fe9042aa69204f7df458cfe43a5cc8.sample"]
+source_file="res://assets/Sound/Sound_effect/Game/Bruits_approche_portail.wav"
+dest_files=["res://.godot/imported/Bruits_approche_portail.wav-322190a418cd08bb21acd656e44431ac.sample"]
 
 [params]
 
