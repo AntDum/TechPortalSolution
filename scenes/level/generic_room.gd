@@ -5,17 +5,17 @@ extends Node2D
 @export_group("Desert")
 @export var desert_A : Array[PackedScene]
 @export var desert_B : Array[PackedScene]
-@export var desert_background : Texture
+@export var desert_background : PackedScene
 
 @export_group("Ice")
 @export var ice_A : Array[PackedScene]
 @export var ice_B : Array[PackedScene]
-@export var ice_background : Texture
+@export var ice_background : PackedScene
 
 @export_group("Moon")
 @export var moon_A : Array[PackedScene]
 @export var moon_B : Array[PackedScene]
-@export var moon_background : Texture
+@export var moon_background : PackedScene
 
 @export_group("Item")
 @export_subgroup("Portal")
@@ -25,7 +25,7 @@ extends Node2D
 @export_subgroup("Collectible")
 @export var wrench : PackedScene
 @export var portalite : PackedScene
-@export var probability_spawn_item : float = 0.3
+@export var probability_spawn_item : float = 0.2
 
 var wrench_is_spawned = false
 var portalite_is_spawned = false
@@ -67,9 +67,8 @@ func place_rooms(pos: Vector2, biome: Room.Biome, ignore: Room.SubRoomType, firs
 	# A1 | B1
 	# B2 | A2
 
-	var background_sprite = Sprite2D.new()
-	background_sprite.texture = background
-	background_sprite.offset = screen_size
+	var background_sprite = background.instantiate()
+	background_sprite.offset = screen_size / 2
 	background_child.add_child(background_sprite)
 
 	var placed_portal = {}
@@ -141,7 +140,8 @@ func place_rooms(pos: Vector2, biome: Room.Biome, ignore: Room.SubRoomType, firs
 						portalite_is_spawned = true
 						portalite_instance.connect("collected", game_manager._on_portalite_collected)
 
-				elif is_final && portalite_is_spawned && wrench_is_spawned:
+				elif is_final && portalite_is_spawned && wrench_is_spawned && \
+					randf() < probability_spawn_item:
 					print("Spawning generator at ", portal_position)
 					var generator_instance = generator.instantiate()
 					room.add_child(generator_instance)

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy1d6sds6iv0a"]
+
+[ext_resource type="Texture2D" uid="uid://clo0bu57vsskd" path="res://assets/sprites/desert_bckg.png" id="1_11rnd"]
+
+[node name="desert_background" type="Sprite2D"]
+texture = ExtResource("1_11rnd")
