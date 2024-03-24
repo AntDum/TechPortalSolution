@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://cetvupjkuh13n"]
+[gd_scene load_steps=9 format=3 uid="uid://cetvupjkuh13n"]
 
 [ext_resource type="PackedScene" uid="uid://lrbobe03y04y" path="res://scenes/misc/camera/ScreenCamera.tscn" id="1_6dtcx"]
 [ext_resource type="Script" path="res://scenes/level/demo_level.gd" id="1_wf577"]
 [ext_resource type="PackedScene" uid="uid://c8cmypufl6l32" path="res://scenes/player/player.tscn" id="2_yrx3s"]
-[ext_resource type="PackedScene" uid="uid://c3hmysrpt8udg" path="res://scenes/ui/ui.tscn" id="5_x0bbi"]
+[ext_resource type="PackedScene" uid="uid://c3hmysrpt8udg" path="res://scenes/UI/ui.tscn" id="5_x0bbi"]
+[ext_resource type="PackedScene" uid="uid://cjxssm6snqvk6" path="res://scenes/misc/portal/portal.tscn" id="6_hgiby"]
 [ext_resource type="PackedScene" uid="uid://doegwdd83n18g" path="res://scenes/misc/platforms/all_purpose_platform.tscn" id="8_lta6m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aq142"]
+size = Vector2(3983.41, 70.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dyf2x"]
+size = Vector2(79, 1322)
 
 [node name="Demo_level" type="Node2D"]
 script = ExtResource("1_wf577")
@@ -66,4 +73,26 @@ position = Vector2(-2018, 571)
 [node name="platform14" parent="." instance=ExtResource("8_lta6m")]
 position = Vector2(-1768, 900)
 
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-3086, 1020)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2018, 176)
+shape = SubResource("RectangleShape2D_aq142")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(-1557, -219)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-606, 715)
+shape = SubResource("RectangleShape2D_dyf2x")
+
+[node name="collectible" parent="." instance=ExtResource("6_hgiby")]
+position = Vector2(-644, 646)
+
 [connection signal="camera_moved" from="ScreenCamera" to="." method="_on_screen_camera_camera_moved"]
+[connection signal="dead" from="Player" to="UI" method="_on_player_dead"]
+[connection signal="body_entered" from="Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="Player" method="_on_area_2d_body_entered"]

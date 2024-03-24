@@ -1,10 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://blbdsrepg6poy"]
+[gd_scene load_steps=8 format=3 uid="uid://blbdsrepg6poy"]
 
 [ext_resource type="AudioStream" uid="uid://c0b5plxjdnalg" path="res://assets/Sound/Music/Portal_main_theme.ogg" id="1_kpcyx"]
 [ext_resource type="Script" path="res://singletons/audio_player.gd" id="2_tpx88"]
+[ext_resource type="AudioStream" uid="uid://djbq3d3r17hcy" path="res://assets/Sound/Music/boucle/AAh.ogg" id="3_v4f0o"]
+[ext_resource type="AudioStream" uid="uid://c37eq3fpbljgx" path="res://assets/Sound/Music/boucle/Basse.ogg" id="4_sfgg2"]
+[ext_resource type="AudioStream" uid="uid://drr125ox2hhlx" path="res://assets/Sound/Music/boucle/Cloche_glace.ogg" id="5_s82od"]
+[ext_resource type="AudioStream" uid="uid://cp8fgyuc2wj4f" path="res://assets/Sound/Music/boucle/Violon.ogg" id="6_8m4gs"]
+[ext_resource type="AudioStream" uid="uid://bxtt1oos8ligu" path="res://assets/Sound/Music/boucle/Violon_court.ogg" id="7_lr1d1"]
 
 [node name="AudioPlayer" type="AudioStreamPlayer"]
 stream = ExtResource("1_kpcyx")
 autoplay = true
 bus = &"Music"
 script = ExtResource("2_tpx88")
+
+[node name="Voice" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_v4f0o")
+
+[node name="Basse" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_sfgg2")
+
+[node name="Cloche" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_s82od")
+
+[node name="Violon-long" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_8m4gs")
+
+[node name="Violon-court" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_lr1d1")

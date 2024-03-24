@@ -15,3 +15,8 @@ func _on_quit_pressed():
 	#Coupe le son avant de quitter le jeu pour ne pas avoir une rupture soudaine
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"),true)
 	get_tree().quit()
+
+
+func _on_start_pressed():
+	AudioPlayer.stop_music()
+	

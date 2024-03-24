@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://yew1372y48ct"]
+
+[ext_resource type="PackedScene" uid="uid://lvx8m071lxvj" path="res://scenes/menu/button.tscn" id="1_l7lh6"]
+[ext_resource type="Script" path="res://scenes/UI/game_over.gd" id="1_wd53c"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_wd53c")
+
+[node name="Button" parent="." instance=ExtResource("1_l7lh6")]
+layout_mode = 0
+offset_left = 253.0
+offset_top = 347.0
+offset_right = 1647.0
+offset_bottom = 458.0
+text = "Déconnecter le robot et retourner au poste de commande
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

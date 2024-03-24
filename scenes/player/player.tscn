@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8cmypufl6l32"]
+[gd_scene load_steps=11 format=3 uid="uid://c8cmypufl6l32"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_cdao0"]
 [ext_resource type="Texture2D" uid="uid://dhtbqu1trn3d0" path="res://icon.svg" id="2_57b52"]
 [ext_resource type="Script" path="res://scenes/player/Sprite_player.gd" id="3_32r44"]
+[ext_resource type="AudioStream" uid="uid://uvojpjcfvkp4" path="res://assets/Sound/Sound_effect/Game/Bruits_atteri_3.wav" id="4_6uw6b"]
+[ext_resource type="AudioStream" uid="uid://et17y26ukqus" path="res://assets/Sound/Sound_effect/Game/Bruits_atteri_1.wav" id="5_q5ld2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f05xk"]
 size = Vector2(128, 128)
@@ -33,6 +35,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Jump:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Land:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_kl4uq"]
 resource_name = "jump"
@@ -48,6 +74,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1.8025, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(0.8, 1.2), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Jump:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_1yeal"]
@@ -76,6 +114,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(0.295, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 13), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Land:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l8oc5"]
@@ -113,3 +163,14 @@ hit_from_inside = true
 position = Vector2(64, 64)
 collision_mask = 2
 hit_from_inside = true
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6uw6b")
+bus = &"SFX"
+
+[node name="Land" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_q5ld2")
+bus = &"SFX"
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
