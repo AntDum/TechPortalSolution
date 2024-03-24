@@ -32,7 +32,7 @@ func _play_music(music: AudioStream):
 	play()
 	
 func play_music_menu():
-	if music_playing == music.MENU:
+	if music_playing == music.MENU or music_playing == music.WIN:
 		return
 	music_playing = music.MENU
 	_play_music(menu_music)
@@ -48,9 +48,7 @@ func stop_music():
 		stop()
 	
 	if music_playing == music.WIN:
-		print("stop win music")
-		sound_animator.play("menu_ease")
-		stop()
+		print("never stop win music")
 	
 	if music_playing == music.GAME:
 		print("stop game music")
