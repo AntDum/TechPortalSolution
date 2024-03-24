@@ -19,7 +19,7 @@ func _ready():
 
 func enable_sand_storm():
 	sand_storm.visible = true
-	AudioPlayer.play_fx(desert_sound)
+	#AudioPlayer.play_fx(desert_sound)
 
 func disable_sand_storm():
 	sand_storm.visible = false

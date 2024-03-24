@@ -63,10 +63,10 @@ func register_room(pos: Vector2, biome: Room.Biome) -> void:
 	# If the room is already registered
 	if rooms.has(str(pos)):
 		# If the room is already registered with the same biome
-		if rooms[str(pos)][0] == biome:
-			assert(false, "Room already registered")
-		if rooms[str(pos)][1] != Room.Biome.NULL:
-			assert(false, "Room already registered")
+		#if rooms[str(pos)][0] == biome:
+			#assert(false, "Room already registered")
+		#if rooms[str(pos)][1] != Room.Biome.NULL:
+			#assert(false, "Room already registered")
 		rooms[str(pos)][1] = biome
 	else:
 		rooms[str(pos)] = [biome, Room.Biome.NULL]
