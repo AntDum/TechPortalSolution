@@ -1,8 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://c3hmysrpt8udg"]
+[gd_scene load_steps=22 format=3 uid="uid://byrlhr2clp63q"]
 
 [ext_resource type="Shader" path="res://scenes/ui/sand_storm.gdshader" id="1_5qf0f"]
 [ext_resource type="Script" path="res://scenes/ui/ui.gd" id="1_6y7ls"]
 [ext_resource type="PackedScene" uid="uid://yew1372y48ct" path="res://scenes/UI/game_over.tscn" id="3_lvm5j"]
+[ext_resource type="Texture2D" uid="uid://qnvakeik63b4" path="res://assets/sprites/wrench.png" id="4_rahja"]
+[ext_resource type="Texture2D" uid="uid://brsypah5262fp" path="res://assets/sprites/portal_stone.png" id="5_35ndj"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_h8qvu"]
 frequency = 0.0245
@@ -77,6 +79,70 @@ shader_parameter/noise_texture_5 = SubResource("NoiseTexture2D_p2d30")
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ayupo"]
 
+[sub_resource type="Animation" id="Animation_bsksv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wrench:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.203922, 0.203922, 0.203922, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("stone:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dgla0"]
+resource_name = "wrench_apparition"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wrench:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.203922, 0.203922, 0.203922, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_de3y7"]
+resource_name = "stone_apparition"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("stone:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.168627, 0.168627, 0.168627, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_83p8w"]
+_data = {
+"RESET": SubResource("Animation_bsksv"),
+"stone_apparition": SubResource("Animation_de3y7"),
+"wrench_apparition": SubResource("Animation_dgla0")
+}
+
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_6y7ls")
 
@@ -91,3 +157,26 @@ grow_vertical = 2
 texture = SubResource("CanvasTexture_ayupo")
 
 [node name="GameOver" parent="." instance=ExtResource("3_lvm5j")]
+visible = false
+
+[node name="Collectible_UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1922.0
+offset_bottom = 1086.0
+
+[node name="wrench" type="Sprite2D" parent="Collectible_UI"]
+modulate = Color(0.203922, 0.203922, 0.203922, 1)
+position = Vector2(36.75, 178.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_rahja")
+
+[node name="stone" type="Sprite2D" parent="Collectible_UI"]
+position = Vector2(42, 93)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_35ndj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Collectible_UI"]
+libraries = {
+"": SubResource("AnimationLibrary_83p8w")
+}

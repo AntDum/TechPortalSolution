@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Basse.ogg-cc1dbf4a6f703f811136ce9175705f13.og
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

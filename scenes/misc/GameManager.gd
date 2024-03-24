@@ -1,6 +1,7 @@
 extends Node
 
 signal room_entered(biome1 : Room.Biome, biome2 : Room.Biome)
+signal item_collected(item:String) #wrench or stone
 
 @onready var RoomMaker = %Map
 
@@ -85,3 +86,4 @@ func _on_room_entered(biome1 : Room.Biome, biome2 : Room.Biome) -> void:
 		UI.enable_sand_storm()
 	else:
 		UI.disable_sand_storm()
+

@@ -2,6 +2,7 @@ extends Control
 
 
 const SOUND_MENU_SCENE = "res://scenes/menu/Menu_son.tscn"
+const MAIN_LVL = "res://scenes/level/main_level.tscn"
 
 func _ready():
 	AudioPlayer.play_music_menu()
@@ -18,5 +19,6 @@ func _on_quit_pressed():
 
 
 func _on_start_pressed():
+	get_tree().change_scene_to_file(MAIN_LVL)
 	AudioPlayer.stop_music()
-	
+	AudioPlayer.play_game_music()
