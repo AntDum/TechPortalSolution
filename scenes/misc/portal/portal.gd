@@ -10,6 +10,6 @@ var room_pos : Vector2
 
 
 func _on_collected():
-	emit_signal("portal_activated", pos, biome, sub_room_type)
+	emit_signal("portal_activated", room_pos, biome, sub_room_type)
 	AudioPlayer.play_fx(portal_passage_fx)
 	queue_free()
