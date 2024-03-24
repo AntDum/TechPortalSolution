@@ -47,6 +47,13 @@ offset_right = 1728.0
 offset_bottom = 598.0
 text = "Quit"
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "A game by 
+Tchoupi"
+
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Music_sound" to="." method="_on_music_sound_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

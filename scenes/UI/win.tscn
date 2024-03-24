@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfgscj6kjo832"]
+[gd_scene load_steps=3 format=3 uid="uid://cfgscj6kjo832"]
 
+[ext_resource type="Script" path="res://scenes/UI/win.gd" id="1_01nw4"]
 [ext_resource type="PackedScene" uid="uid://lvx8m071lxvj" path="res://scenes/menu/button.tscn" id="1_chcyo"]
 
 [node name="Win" type="Control"]
@@ -7,6 +8,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_01nw4")
 
 [node name="Button" parent="." instance=ExtResource("1_chcyo")]
 layout_mode = 0
@@ -15,3 +17,5 @@ offset_top = 983.0
 offset_right = 1889.0
 offset_bottom = 1062.0
 text = "Retourner au menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

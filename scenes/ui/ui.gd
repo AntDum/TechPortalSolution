@@ -36,10 +36,11 @@ func _on_game_manager_item_collected(item):
 	if item == "wrench":
 		item_animator.play("wrench_apparition") 
 	if item == "stone":
-			item_animator.play("stone_apparition") 
+		item_animator.play("stone_apparition") 
 			
 
-func _on_game_manager_generateur_fixed(): #A VERIFIER
+func _on_game_manager_generator_fixed():
 	win.visible = true
 	AudioPlayer.stop_music()
-	AudioPlayer.play
+	AudioPlayer.play_win_music()
+	

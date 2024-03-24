@@ -54,5 +54,6 @@ target = NodePath("../Player")
 
 [node name="IceSpikesGenerator" parent="ScreenCamera" instance=ExtResource("2_xxsbs")]
 
+[connection signal="generator_fixed" from="GameManager" to="UI" method="_on_game_manager_generator_fixed"]
 [connection signal="item_collected" from="GameManager" to="UI" method="_on_game_manager_item_collected"]
 [connection signal="camera_moved" from="ScreenCamera" to="GameManager" method="_on_screen_camera_camera_moved"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://byrlhr2clp63q"]
+[gd_scene load_steps=23 format=3 uid="uid://byrlhr2clp63q"]
 
 [ext_resource type="Shader" path="res://scenes/ui/sand_storm.gdshader" id="1_5qf0f"]
 [ext_resource type="Script" path="res://scenes/ui/ui.gd" id="1_6y7ls"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://qnvakeik63b4" path="res://assets/sprites/wrench.png" id="4_rahja"]
 [ext_resource type="Texture2D" uid="uid://brsypah5262fp" path="res://assets/sprites/portal_stone.png" id="5_35ndj"]
 [ext_resource type="PackedScene" uid="uid://cfgscj6kjo832" path="res://scenes/UI/win.tscn" id="6_mxoxd"]
-[ext_resource type="Script" path="res://scenes/UI/win.gd" id="7_bjtip"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_h8qvu"]
 frequency = 0.0245
@@ -185,4 +184,3 @@ autoplay = "RESET"
 [node name="GameOver" parent="." instance=ExtResource("3_lvm5j")]
 
 [node name="Win" parent="." instance=ExtResource("6_mxoxd")]
-script = ExtResource("7_bjtip")

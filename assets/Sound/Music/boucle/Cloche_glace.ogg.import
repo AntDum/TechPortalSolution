@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://drr125ox2hhlx"
-path="res://.godot/imported/Cloche_glace.ogg-498a6d965e53d18e70d0944196611e76.oggvorbisstr"
+path="res://.godot/imported/Cloche_glace.ogg-f370e01c6f9a0fa36c33dc62a49471f8.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/sound/Music/boucle/Cloche_glace.ogg"
-dest_files=["res://.godot/imported/Cloche_glace.ogg-498a6d965e53d18e70d0944196611e76.oggvorbisstr"]
+source_file="res://assets/Sound/Music/boucle/Cloche_glace.ogg"
+dest_files=["res://.godot/imported/Cloche_glace.ogg-f370e01c6f9a0fa36c33dc62a49471f8.oggvorbisstr"]
 
 [params]
 

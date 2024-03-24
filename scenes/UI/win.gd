@@ -1,11 +1,18 @@
 extends Control
 
 
-# Called when the node enters the scene tree for the first time.
+
+const MAIN_MENU_SCENE = "res://scenes/menu/Main_menu.tscn"
+
+
 func _ready():
 	visible = false
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+
+func _on_button_pressed():
+	get_tree().change_scene_to_file(MAIN_MENU_SCENE)
+
+
+
+# Called when the node ent
