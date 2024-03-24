@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Cloche_glace.ogg-f370e01c6f9a0fa36c33dc62a494
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

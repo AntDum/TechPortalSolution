@@ -1,5 +1,8 @@
 extends Node
 
+signal item_collected(item:String) #wrench or stone
+
+
 @onready var RoomMaker = %Map
 
 @export var player_path : NodePath
@@ -50,3 +53,4 @@ func _on_screen_camera_camera_moved(to):
 		UI.enable_sand_storm()
 	else:
 		UI.disable_sand_storm()
+

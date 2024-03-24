@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var sand_storm = $sand_storm
 @onready var game_over = get_node("GameOver")
 @onready var dead_fx = preload("res://assets/Sound/Sound_effect/Game/Bruit_dead.wav")
+@onready var item_animator = $Collectible_UI/AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,3 +28,8 @@ func _on_player_dead():
 	#fx
 	AudioPlayer.play_fx(dead_fx)
 	pass # Replace with function body.
+	
+	
+
+func _on_game_manager_item_collected(item):
+	item_animator.play(item)

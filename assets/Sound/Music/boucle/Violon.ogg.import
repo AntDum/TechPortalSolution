@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Violon.ogg-54d3d17f81ff21fb1e7598bf72a9904b.o
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
