@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://c3hmysrpt8udg"]
+[gd_scene load_steps=16 format=3 uid="uid://c3hmysrpt8udg"]
 
 [ext_resource type="Shader" path="res://scenes/ui/sand_storm.gdshader" id="1_5qf0f"]
 [ext_resource type="Script" path="res://scenes/ui/ui.gd" id="1_6y7ls"]
+[ext_resource type="PackedScene" uid="uid://yew1372y48ct" path="res://scenes/UI/game_over.tscn" id="3_lvm5j"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_h8qvu"]
 frequency = 0.0245
@@ -86,3 +87,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_ayupo")
+
+[node name="GameOver" parent="." instance=ExtResource("3_lvm5j")]
