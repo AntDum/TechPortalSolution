@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfgscj6kjo832"]
+
+[ext_resource type="PackedScene" uid="uid://lvx8m071lxvj" path="res://scenes/menu/button.tscn" id="1_chcyo"]
+
+[node name="Win" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" parent="." instance=ExtResource("1_chcyo")]
+layout_mode = 0
+offset_left = 1139.0
+offset_top = 983.0
+offset_right = 1889.0
+offset_bottom = 1062.0
+text = "Retourner au menu"
