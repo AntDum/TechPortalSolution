@@ -4,7 +4,11 @@ extends Control
 const SOUND_MENU_SCENE = "res://scenes/menu/Menu_son.tscn"
 const MAIN_LVL = "res://scenes/level/main_level.tscn"
 
+
+
 func _ready():
+	await get_tree().process_frame
+	print("ENTERING MENU")
 	AudioPlayer.play_music_menu()
 
 func _on_music_sound_pressed():

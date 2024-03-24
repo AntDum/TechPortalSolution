@@ -157,7 +157,7 @@ func set_direction(hor_direction) -> void:
 	# To animate, only scale the sprite
 	if hor_direction == 0:
 		return
-	apply_scale(Vector2(hor_direction * face_direction, 1)) # flip
+	#apply_scale(Vector2(hor_direction * face_direction, 1)) # flip
 	face_direction = hor_direction # remember direction
 
 
@@ -230,9 +230,8 @@ func _on_room_entered(biome1 : Room.Biome, biome2 : Room.Biome) -> void:
 	else:
 		put_on_ice(false)
 
-func _on_area_2d_body_entered(body):
-	dead.emit()
-	queue_free()
+func _on_area_2d_body_entered(_body):
+	get_killed()
 	
 	
 func suffocate():
@@ -255,4 +254,6 @@ func breathe():
 
 func get_killed():
 	print("YOU JUST DIEEEEED")
-	emit_signal("dead")
+	dead.emit()
+	queue_free()
+

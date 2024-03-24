@@ -1,7 +1,6 @@
 extends Node2D
 
-@export var portal : PackedScene
-@export var probability_spawn_portal : float = 1.0
+
 
 @export_group("Desert")
 @export var desert_A : Array[PackedScene]
@@ -18,13 +17,26 @@ extends Node2D
 @export var moon_B : Array[PackedScene]
 @export var moon_background : Texture
 
+@export_group("Item")
+@export_subgroup("Portal")
+@export var portal : PackedScene
+@export var generator : PackedScene
+
+@export_subgroup("Collectible")
+@export var wrench : PackedScene
+@export var portalite : PackedScene
+@export var probability_spawn_item : float = 0.3
+
+var wrench_is_spawned = false
+var portalite_is_spawned = false
+
 @onready var screen_size = get_viewport_rect().size
 @onready var game_manager = %GameManager
 
 @onready var background_child = $Background
 @onready var platform_child = $Platforms
 
-func place_room(pos: Vector2, biome: Room.Biome, ignore: Room.SubRoomType, first_map : bool) -> void:
+func place_rooms(pos: Vector2, biome: Room.Biome, ignore: Room.SubRoomType, first_map : bool, is_final : bool, can_spawn_items : bool) -> void:
 	print("Placing room at ", pos, " ignore ", ignore, " in biome ", biome, " first map ", first_map)
 	
 	var A_bag
@@ -104,7 +116,33 @@ func place_room(pos: Vector2, biome: Room.Biome, ignore: Room.SubRoomType, first
 				if game_manager.is_room_full(new_pos) || \
 					ignore == sub_type:
 					continue
-				if randf() < probability_spawn_portal:
+
+				elif randf() < probability_spawn_item && can_spawn_items:
+					print("Spawning item at ", portal_position)
+					if randf() < 0.5:
+						var wrench_instance = wrench.instantiate()
+						room.add_child(wrench_instance)
+						wrench_instance.global_position = portal_position
+						wrench_is_spawned = true
+						wrench_instance.connect("collected", game_manager._on_wrench_collected)
+					else:
+						var portalite_instance = portalite.instantiate()
+						room.add_child(portalite_instance)
+						portalite_instance.global_position = portal_position
+						portalite_is_spawned = true
+						portalite_instance.connect("collected", game_manager._on_portalite_collected)
+
+				elif is_final && portalite_is_spawned && wrench_is_spawned:
+					print("Spawning generator at ", portal_position)
+					var generator_instance = generator.instantiate()
+					room.add_child(generator_instance)
+					generator_instance.game_manager = game_manager
+					generator_instance.global_position = portal_position
+					generator_instance.connect("repaired", game_manager._on_generator_collected)
+
+
+				else:
+					print("Spawning portal at ", portal_position)
 					var portal_instance = portal.instantiate()
 					room.add_child(portal_instance)
 					portal_instance.global_position = portal_position

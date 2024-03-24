@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var game_over = get_node("GameOver")
 @onready var dead_fx = preload("res://assets/Sound/Sound_effect/Game/Bruit_dead.wav")
 @onready var item_animator = $Collectible_UI/AnimationPlayer
+@onready var win = get_node("Win")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,10 +27,20 @@ func _on_player_dead():
 	game_over.visible = true
 	#disable mvt -> Done by removing the player
 	#fx
+	AudioPlayer.stop_music()
 	AudioPlayer.play_fx(dead_fx)
-	pass # Replace with function body.
 	
 	
 
 func _on_game_manager_item_collected(item):
-	item_animator.play(item)
+	if item == "wrench":
+		item_animator.play("wrench_apparition") 
+	if item == "stone":
+		item_animator.play("stone_apparition") 
+			
+
+func _on_game_manager_generator_fixed():
+	win.visible = true
+	AudioPlayer.stop_music()
+	AudioPlayer.play_win_music()
+	

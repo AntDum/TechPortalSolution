@@ -1,6 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://cjb71n2md4a51"]
+[gd_scene load_steps=20 format=3 uid="uid://cjb71n2md4a51"]
 
-[ext_resource type="PackedScene" uid="uid://yr2rkrvl6msr" path="res://scenes/misc/game_manager.tscn" id="1_0vmmp"]
+[ext_resource type="PackedScene" uid="uid://3kcjsi1jm30s" path="res://scenes/misc/game_manager.tscn" id="1_0vmmp"]
 [ext_resource type="PackedScene" uid="uid://lrbobe03y04y" path="res://scenes/misc/camera/ScreenCamera.tscn" id="1_fv07i"]
 [ext_resource type="PackedScene" uid="uid://c8cmypufl6l32" path="res://scenes/player/player.tscn" id="2_gtig1"]
 [ext_resource type="PackedScene" uid="uid://dsifojcl8orq0" path="res://scenes/env/ice_spikes_generator.tscn" id="2_xxsbs"]
@@ -18,6 +18,9 @@
 [ext_resource type="PackedScene" uid="uid://weq3rc784pck" path="res://scenes/level/moon/moon_tableau_A1.tscn" id="11_jyqiv"]
 [ext_resource type="PackedScene" uid="uid://blullxtmxkqun" path="res://scenes/level/moon/moon_tableau_B1.tscn" id="12_ic2kj"]
 [ext_resource type="Texture2D" uid="uid://ciisxx320geok" path="res://assets/sprites/moon_bckg.png" id="13_6qdsk"]
+[ext_resource type="PackedScene" uid="uid://dwyroaw7tg3ek" path="res://scenes/misc/collectibles/generator.tscn" id="14_5ubc2"]
+[ext_resource type="PackedScene" uid="uid://07ktkj0xxlhw" path="res://scenes/misc/collectibles/wrench.tscn" id="15_u7hj4"]
+[ext_resource type="PackedScene" uid="uid://c20pftwnjf0xs" path="res://scenes/misc/collectibles/stone.tscn" id="16_4ilak"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -29,7 +32,7 @@ player_path = NodePath("../Player")
 camera_path = NodePath("../ScreenCamera")
 ui = NodePath("../UI")
 
-[node name="Map" parent="." instance=ExtResource("5_b16af")]
+[node name="MapFactory" parent="." instance=ExtResource("5_b16af")]
 unique_name_in_owner = true
 desert_A = Array[PackedScene]([ExtResource("4_tbl0p"), ExtResource("5_d1pyu")])
 desert_B = Array[PackedScene]([ExtResource("6_1acrp"), ExtResource("7_nxkv6")])
@@ -41,6 +44,9 @@ moon_A = Array[PackedScene]([ExtResource("11_jyqiv")])
 moon_B = Array[PackedScene]([ExtResource("12_ic2kj")])
 moon_background = ExtResource("13_6qdsk")
 portal = ExtResource("5_dxvwj")
+generator = ExtResource("14_5ubc2")
+wrench = ExtResource("15_u7hj4")
+portalite = ExtResource("16_4ilak")
 
 [node name="Player" parent="." instance=ExtResource("2_gtig1")]
 position = Vector2(944, 490)
@@ -52,5 +58,6 @@ target = NodePath("../Player")
 
 [node name="IceSpikesGenerator" parent="ScreenCamera" instance=ExtResource("2_xxsbs")]
 
+[connection signal="generator_fixed" from="GameManager" to="UI" method="_on_game_manager_generator_fixed"]
 [connection signal="item_collected" from="GameManager" to="UI" method="_on_game_manager_item_collected"]
 [connection signal="camera_moved" from="ScreenCamera" to="GameManager" method="_on_screen_camera_camera_moved"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://c20pftwnjf0xs"]
+
+[ext_resource type="PackedScene" uid="uid://shswww7ahx4w" path="res://scenes/misc/collectibles/collectible.tscn" id="1_fggqh"]
+[ext_resource type="Script" path="res://scenes/misc/collectibles/items.gd" id="2_eoaf4"]
+[ext_resource type="Texture2D" uid="uid://brsypah5262fp" path="res://assets/sprites/portal_stone.png" id="2_o7f2b"]
+
+[node name="stone" instance=ExtResource("1_fggqh")]
+script = ExtResource("2_eoaf4")
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("2_o7f2b")
+
+[connection signal="collected" from="." to="." method="_on_collected"]

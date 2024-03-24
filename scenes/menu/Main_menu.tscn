@@ -23,29 +23,36 @@ centered = false
 
 [node name="Start" parent="." instance=ExtResource("1_ffjsw")]
 layout_mode = 0
-offset_left = 872.0
-offset_top = 109.0
-offset_right = 1728.0
-offset_bottom = 318.0
+offset_left = 748.0
+offset_top = 108.0
+offset_right = 1855.0
+offset_bottom = 317.0
 theme_override_font_sizes/font_size = 80
 text = "Start the game
 "
 
 [node name="Music_sound" parent="." instance=ExtResource("1_ffjsw")]
 layout_mode = 0
-offset_left = 1167.0
+offset_left = 1091.0
 offset_top = 356.0
-offset_right = 1728.0
+offset_right = 1790.0
 offset_bottom = 438.0
 text = "Music and Sound"
 
 [node name="Quit" parent="." instance=ExtResource("1_ffjsw")]
 layout_mode = 0
-offset_left = 1534.0
+offset_left = 1500.0
 offset_top = 498.0
 offset_right = 1728.0
 offset_bottom = 598.0
 text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "A game by 
+Tchoupi"
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Music_sound" to="." method="_on_music_sound_pressed"]
