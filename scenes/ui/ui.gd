@@ -26,10 +26,11 @@ func _on_player_dead():
 	game_over.visible = true
 	#disable mvt -> Done by removing the player
 	#fx
+	AudioPlayer.stop_music()
 	AudioPlayer.play_fx(dead_fx)
-	pass # Replace with function body.
 	
 	
 
 func _on_game_manager_item_collected(item):
-	item_animator.play(item)
+	
+	item_animator.play(item) #A corriger
