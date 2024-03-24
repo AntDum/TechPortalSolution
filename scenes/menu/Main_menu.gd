@@ -18,5 +18,5 @@ func _on_quit_pressed():
 
 
 func _on_start_pressed():
-	AudioPlayer.stop_music_menu()
+	AudioPlayer.stop_music()
 	
